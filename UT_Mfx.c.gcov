@@ -1,0 +1,1471 @@
+        -:    0:Source:UT_Mfx.c
+        -:    0:Graph:UT_Mfx.gcno
+        -:    0:Data:UT_Mfx.gcda
+        -:    0:Runs:64
+        -:    1:/** ==================================================================================================================*\
+        -:    2:    @file UT_Mfx.c
+        -:    3:
+        -:    4:    @brief Test for Mfx
+        -:    5:\*====================================================================================================================*/
+        -:    6:
+        -:    7:#include "acutest.h"
+        -:    8:
+        -:    9:#include "Mfx.c"   /* To nie pomyłka - taki include eksponuje zmienne statyczne dla testów */
+        -:   10:
+        -:   11:
+        -:   12:/* @brief Additions Test
+        -:   13:
+        -:   14:  This routine tests an addition between the two arguments.
+        -:   15:*/
+        1:   16:void Test_Of_Mfx_Add_s16s16_s16(void)
+        -:   17:{
+        -:   18:    sint16 result;
+        -:   19:
+        1:   20:    result = Mfx_Add_s16s16_s16(MAX16,1);
+        -:   21:
+        1:   22:    TEST_CHECK(result == MAX16);       /* Test przejdzie jeżeli wyrażenie w nawiasach jest prawdziwe */
+        -:   23:
+        1:   24:    result = Mfx_Add_s16s16_s16(MIN16,-1);
+        -:   25:
+        1:   26:    TEST_CHECK(result == MIN16);
+        -:   27:   
+        -:   28:    /* TUTAJ DOPISZ WIĘCEJ TESTÓW */
+        1:   29:}
+        -:   30:
+        -:   31:
+        1:   32:void Test_Of_Mfx_Add_s32s32_s32(void)
+        -:   33:{
+        -:   34:    sint32 result;
+        -:   35:
+        1:   36:    result = Mfx_Add_s32s32_s32(MAX32,1);
+        -:   37:
+        1:   38:    TEST_CHECK(result == MAX32);       /* Test przejdzie jeżeli wyrażenie w nawiasach jest prawdziwe */
+        -:   39:
+        1:   40:    result = Mfx_Add_s32s32_s32(MIN32,-1);
+        -:   41:
+        1:   42:    TEST_CHECK(result == MIN32);
+        -:   43:   
+        -:   44:    /* TUTAJ DOPISZ WIĘCEJ TESTÓW */
+        1:   45:}
+        -:   46:
+        -:   47:
+        -:   48:/**
+        -:   49:  @brief Substraction test
+        -:   50:
+        -:   51:  This routine tests a subtraction between the two arguments.
+        -:   52:*/
+        1:   53:void Test_Of_Mfx_Sub_s16s16_s16(void)
+        -:   54:{
+        -:   55:    sint16 result;
+        -:   56:
+        1:   57:    result = Mfx_Sub_s16s16_s16(MAX16, -1);
+        -:   58:
+        1:   59:    TEST_CHECK(result == MAX16);
+        -:   60:
+        1:   61:     result = Mfx_Sub_s16s16_s16(MIN16, 1);
+        -:   62:
+        1:   63:    TEST_CHECK(result == MIN16);
+        -:   64:
+        1:   65:}
+        -:   66:
+        -:   67:
+        1:   68:void Test_Of_Mfx_Sub_s32s32_s32(void)
+        -:   69:{
+        -:   70:    sint32 result;
+        -:   71:
+        1:   72:    result = Mfx_Sub_s32s32_s32(MAX32, -1);
+        -:   73:
+        1:   74:    TEST_CHECK(result == MAX32);
+        -:   75:
+        1:   76:     result = Mfx_Sub_s32s32_s32(MIN32, 1);
+        -:   77:
+        1:   78:    TEST_CHECK(result == MIN32);
+        -:   79:
+        1:   80:}
+        -:   81:
+        -:   82:/**
+        -:   83:  @brief Absolute value test
+        -:   84:
+        -:   85:  This routine tests the absolute value of a signed value.
+        -:   86:*/
+        1:   87:void Test_Of_Mfx_Abs_s16_s16(void)
+        -:   88:{
+        -:   89:    sint16 result;
+        -:   90:
+        1:   91:    result = Mfx_Abs_s16_s16(MIN16);
+        -:   92:
+        1:   93:    TEST_CHECK(result == MAX16);
+        -:   94:
+        1:   95:    result = Mfx_Abs_s16_s16(1);
+        -:   96:
+        1:   97:    TEST_CHECK(result == 1);
+        -:   98:
+        1:   99:    result = Mfx_Abs_s16_s16(-1);
+        -:  100:
+        1:  101:    TEST_CHECK(result == 1);
+        -:  102:
+        1:  103:}
+        -:  104:
+        1:  105:void Test_Of_Mfx_Abs_s32_s32(void)
+        -:  106:{
+        -:  107:    sint32 result;
+        -:  108:
+        1:  109:    result = Mfx_Abs_s32_s32(MIN32);
+        -:  110:
+        1:  111:    TEST_CHECK(result == MAX32);
+        -:  112:
+        1:  113:    result = Mfx_Abs_s32_s32(1);
+        -:  114:
+        1:  115:    TEST_CHECK(result == 1);
+        -:  116:
+        1:  117:    result = Mfx_Abs_s32_s32(-1);
+        -:  118:
+        1:  119:    TEST_CHECK(result == 1);
+        -:  120:
+        1:  121:}
+        -:  122:
+        -:  123:
+        -:  124:/**
+        -:  125:  @brief Absolute value of a difference test
+        -:  126:
+        -:  127:  This routine tests the absolute value of a difference between 2 values.
+        -:  128:*/
+        1:  129:void Test_Of_Mfx_AbsDiff_s16s16_s16(void)
+        -:  130:{
+        -:  131:    sint16 result;
+        -:  132:
+        1:  133:    result = Mfx_AbsDiff_s16s16_s16(MAX16,-1);
+        -:  134:
+        1:  135:    TEST_CHECK(result == MAX16);
+        -:  136:
+        1:  137:     result = Mfx_AbsDiff_s16s16_s16(MIN16,1);
+        -:  138:
+        1:  139:    TEST_CHECK(result == MIN16);
+        -:  140:
+        1:  141:    result = Mfx_AbsDiff_s16s16_s16(MIN16,0);
+        -:  142:
+        1:  143:    TEST_CHECK(result == MAX16);
+        -:  144:
+        1:  145:    result = Mfx_AbsDiff_s16s16_s16(2,1);
+        -:  146:
+        1:  147:    TEST_CHECK(result == 1);
+        -:  148:
+        1:  149:    result = Mfx_AbsDiff_s16s16_s16(0,1);
+        -:  150:
+        1:  151:    TEST_CHECK(result == 1);
+        -:  152:
+        1:  153:}
+        -:  154:
+        1:  155:void Test_Of_Mfx_AbsDiff_s32s32_s32(void)
+        -:  156:{
+        -:  157:    sint32 result;
+        -:  158:
+        1:  159:    result = Mfx_AbsDiff_s32s32_s32(MAX32,-1);
+        -:  160:
+        1:  161:    TEST_CHECK(result == MAX32);
+        -:  162:
+        1:  163:     result = Mfx_AbsDiff_s32s32_s32(MIN32,1);
+        -:  164:
+        1:  165:    TEST_CHECK(result == MIN32);
+        -:  166:
+        1:  167:    result = Mfx_AbsDiff_s32s32_s32(MIN32,0);
+        -:  168:
+        1:  169:    TEST_CHECK(result == MAX32);
+        -:  170:
+        1:  171:    result = Mfx_AbsDiff_s32s32_s32(2,1);
+        -:  172:
+        1:  173:    TEST_CHECK(result == 1);
+        -:  174:
+        1:  175:    result = Mfx_AbsDiff_s32s32_s32(0,1);
+        -:  176:
+        1:  177:    TEST_CHECK(result == 1);
+        -:  178:
+        1:  179:}
+        -:  180:
+        1:  181:void Test_Of_Mfx_AbsDiff_u32u32_u32(void)
+        -:  182:{
+        -:  183:    uint32 result;
+        -:  184:
+        1:  185:    result = Mfx_AbsDiff_u32u32_u32(UMAX32,0);
+        -:  186:
+        1:  187:    TEST_CHECK(result == UMAX32);
+        -:  188:
+        1:  189:     result = Mfx_AbsDiff_u32u32_u32(0,0);
+        -:  190:
+        1:  191:    TEST_CHECK(result == UMIN32);
+        -:  192:
+        1:  193:    result = Mfx_AbsDiff_u32u32_u32(2,1);
+        -:  194:
+        1:  195:    TEST_CHECK(result == 1);
+        -:  196:
+        1:  197:    result = Mfx_AbsDiff_u32u32_u32(0,1);
+        -:  198:
+        1:  199:    TEST_CHECK(result == 1);
+        -:  200:
+        1:  201:}
+        -:  202:
+        -:  203:
+        -:  204:/**
+        -:  205:  @brief Multiplication test
+        -:  206:
+        -:  207:  This routine tests a multiplication between the two arguments.
+        -:  208:*/
+        -:  209:
+        1:  210:void Test_Of_Mfx_Mul_s16s16_s16(void)
+        -:  211:{
+        -:  212:    sint16 result;
+        -:  213:
+        1:  214:    result = Mfx_Mul_s16s16_s16(MAX16,2);
+        -:  215:
+        1:  216:    TEST_CHECK(result == MAX16);
+        -:  217:
+        1:  218:     result = Mfx_Mul_s16s16_s16(MIN16,2);
+        -:  219:
+        1:  220:    TEST_CHECK(result == MIN16);
+        -:  221:
+        1:  222:}
+        -:  223:
+        1:  224:void Test_Of_Mfx_Mul_s32s32_s32(void)
+        -:  225:{
+        -:  226:    sint32 result;
+        -:  227:
+        1:  228:    result = Mfx_Mul_s32s32_s32(MAX32,2);
+        -:  229:
+        1:  230:    TEST_CHECK(result == MAX32);
+        -:  231:
+        1:  232:     result = Mfx_Mul_s32s32_s32(MIN32,2);
+        -:  233:
+        1:  234:    TEST_CHECK(result == MIN32);
+        -:  235:
+        1:  236:}
+        -:  237:
+        -:  238:/**
+        -:  239:  @brief Divisions rounded towards 0 test
+        -:  240:
+        -:  241:  These routines test a division between the two arguments.
+        -:  242:*/
+        -:  243:
+        1:  244:void Test_Of_Mfx_Div_s16s16_s16(void)
+        -:  245:{
+        -:  246:    sint16 result;
+        -:  247:
+        1:  248:    result = Mfx_Div_s16s16_s16(1,0);
+        -:  249:
+        1:  250:    TEST_CHECK(result == MAX16);
+        -:  251:
+        1:  252:    result = Mfx_Div_s16s16_s16(-1,0);
+        -:  253:
+        1:  254:    TEST_CHECK(result == MIN16);
+        -:  255:
+        1:  256:    result = Mfx_Mul_s16s16_s16(MIN16,-1);
+        -:  257:
+        1:  258:    TEST_CHECK(result == MAX16);
+        -:  259:
+        1:  260:     result = Mfx_Mul_s16s16_s16(MIN16,1);
+        -:  261:
+        1:  262:    TEST_CHECK(result == MIN16);
+        -:  263:
+        1:  264:}
+        -:  265:
+        -:  266:
+        1:  267:void Test_Of_Mfx_Div_s32s32_s32(void)
+        -:  268:{
+        -:  269:    sint32 result;
+        -:  270:
+        1:  271:    result = Mfx_Div_s32s32_s32(1,0);
+        -:  272:
+        1:  273:    TEST_CHECK(result == MAX32);
+        -:  274:
+        1:  275:    result = Mfx_Div_s32s32_s32(-1,0);
+        -:  276:
+        1:  277:    TEST_CHECK(result == MIN32);
+        -:  278:
+        1:  279:     result = Mfx_Div_s32s32_s32(MIN32,-1);
+        -:  280:
+        1:  281:    TEST_CHECK(result == MAX32);
+        -:  282:
+        1:  283:    result = Mfx_Div_s32s32_s32(MIN32,1);
+        -:  284:
+        1:  285:    TEST_CHECK(result == MIN32);
+        -:  286:
+        1:  287:}
+        -:  288:
+        -:  289:
+        -:  290:/**
+        -:  291:  @brief Divisions rounded off test
+        -:  292:
+        -:  293:  These routines test a division between the two arguments.
+        -:  294:*/
+        1:  295:void Test_Of_Mfx_RDiv_s16s16_s16(void)
+        -:  296:{
+        -:  297:    sint16 result;
+        -:  298:
+        1:  299:    result = Mfx_RDiv_s16s16_s16(1,0);
+        -:  300:
+        1:  301:    TEST_CHECK(result == MAX16);
+        -:  302:
+        1:  303:    result = Mfx_RDiv_s16s16_s16(-1,0);
+        -:  304:
+        1:  305:    TEST_CHECK(result == MIN16);
+        -:  306:
+        1:  307:    result = Mfx_RDiv_s16s16_s16(2,2);
+        -:  308:
+        1:  309:    TEST_CHECK(result == 1);
+        -:  310:
+        1:  311:    result = Mfx_RDiv_s16s16_s16(3,2);
+        -:  312:
+        1:  313:    TEST_CHECK(result == 2);
+        -:  314:
+        1:  315:    result = Mfx_RDiv_s16s16_s16(-3,2);
+        -:  316:
+        1:  317:    TEST_CHECK(result == -2);
+        -:  318:
+        1:  319:     result = Mfx_RDiv_s16s16_s16(MIN16,-1);
+        -:  320:
+        1:  321:    TEST_CHECK(result == MAX16);
+        -:  322:
+        1:  323:    result = Mfx_RDiv_s16s16_s16(MIN16,1);
+        -:  324:
+        1:  325:    TEST_CHECK(result == MIN16);
+        -:  326:
+        1:  327:}
+        -:  328:
+        1:  329:void Test_Of_Mfx_RDiv_s32s32_s32(void)
+        -:  330:{
+        -:  331:    sint32 result;
+        -:  332:
+        1:  333:    result = Mfx_RDiv_s32s32_s32(1,0);
+        -:  334:
+        1:  335:    TEST_CHECK(result == MAX32);
+        -:  336:
+        1:  337:    result = Mfx_RDiv_s32s32_s32(-1,0);
+        -:  338:
+        1:  339:    TEST_CHECK(result == MIN32);
+        -:  340:
+        1:  341:    result = Mfx_RDiv_s32s32_s32(2,2);
+        -:  342:
+        1:  343:    TEST_CHECK(result == 1);
+        -:  344:
+        1:  345:    result = Mfx_RDiv_s32s32_s32(3,2);
+        -:  346:
+        1:  347:    TEST_CHECK(result == 2);
+        -:  348:
+        1:  349:    result = Mfx_RDiv_s32s32_s32(-3,2);
+        -:  350:
+        1:  351:    TEST_CHECK(result == -2);
+        -:  352:
+        -:  353:
+        1:  354:    result = Mfx_RDiv_s32s32_s32(MIN32,1);
+        -:  355:
+        1:  356:    TEST_CHECK(result == MIN32);
+        -:  357:
+        1:  358:    result = Mfx_RDiv_s32s32_s32(MIN32,-1);
+        1:  359:    TEST_CHECK(result == MAX32);
+        -:  360:
+        1:  361:}
+        -:  362:
+        -:  363:/**
+        -:  364:  @brief Combinations of multiplication and division rounded towards 0 test
+        -:  365:
+        -:  366:  These routines test a multiplication between the two arguments and a division by the third argument.
+        -:  367:*/
+        -:  368:
+        1:  369:void Test_Of_Mfx_MulDiv_s16s16_s16(void)
+        -:  370:{
+        -:  371:    sint16 result;
+        -:  372:
+        1:  373:    result = Mfx_MulDiv_s16s16_s16(3,1,2);
+        -:  374:
+        1:  375:    TEST_CHECK(result == 1);
+        -:  376:
+        1:  377:}
+        -:  378:
+        1:  379:void Test_Of_Mfx_MulDiv_s32s32_s32(void)
+        -:  380:{
+        -:  381:    sint32 result;
+        -:  382:
+        1:  383:    result = Mfx_MulDiv_s32s32_s32(3,1,2);
+        -:  384:
+        1:  385:    TEST_CHECK(result == 1);
+        -:  386:
+        1:  387:}
+        -:  388:
+        -:  389:/**
+        -:  390:  @brief Combinations of multiplication and division rounded off test
+        -:  391:
+        -:  392:  These routines test a multiplication between the two arguments and a division by the third argument.
+        -:  393:*/
+        1:  394:void Test_Of_Mfx_RMulDiv_s16s16_s16(void)
+        -:  395:{
+        -:  396:    sint16 result;
+        -:  397:
+        1:  398:    result = Mfx_RMulDiv_s16s16_s16(3,1,2);
+        -:  399:
+        1:  400:    TEST_CHECK(result == 2);
+        -:  401:
+        1:  402:}
+        -:  403:
+        1:  404:void Test_Of_Mfx_RMulDiv_s32s32_s32(void)
+        -:  405:{
+        -:  406:    sint32 result;
+        -:  407:
+        1:  408:    result = Mfx_RMulDiv_s32s32_s32(3,1,2);
+        -:  409:
+        1:  410:    TEST_CHECK(result == 2);
+        -:  411:
+        1:  412:}
+        -:  413:
+        -:  414:/**
+        -:  415:  @brief Combinations of multiplication and shift right test
+        -:  416:
+        -:  417:  This routine tests a multiplication between the two arguments and applies a shift right defined by the third argument.
+        -:  418:*/
+        -:  419:
+        1:  420:void Test_Of_Mfx_MulShRight_s16s16u8_s32(void)
+        -:  421:{
+        -:  422:    sint16 result;
+        -:  423:
+        1:  424:    result = Mfx_MulShRight_s16s16u8_s32(MIN16,-1,0);
+        -:  425:
+        1:  426:    TEST_CHECK(result == MAX16);
+        -:  427:
+        1:  428:     result = Mfx_MulShRight_s16s16u8_s32(MIN16,1,0);
+        -:  429:
+        1:  430:    TEST_CHECK(result == MIN16);
+        -:  431:
+        1:  432:     result = Mfx_MulShRight_s16s16u8_s32(1,2,1);
+        -:  433:
+        1:  434:    TEST_CHECK(result == 1);
+        -:  435:
+        1:  436:     result = Mfx_MulShRight_s16s16u8_s32(-4,2,1);
+        -:  437:
+        1:  438:    TEST_CHECK(result == -4);
+        -:  439:
+        1:  440:}
+        -:  441:
+        1:  442:void Test_Of_Mfx_MulShRight_s32s32u8_s32(void)
+        -:  443:{
+        -:  444:    sint32 result;
+        -:  445:
+        1:  446:    result = Mfx_MulShRight_s32s32u8_s32(MIN32,-1,0);
+        -:  447:
+        1:  448:    TEST_CHECK(result == MAX32);
+        -:  449:
+        1:  450:     result = Mfx_MulShRight_s32s32u8_s32(MIN32,1,0);
+        -:  451:
+        1:  452:    TEST_CHECK(result == MIN32);
+        -:  453:
+        1:  454:    result = Mfx_MulShRight_s32s32u8_s32(1,2,1);
+        -:  455:
+        1:  456:    TEST_CHECK(result == 1);
+        -:  457:
+        1:  458:     result = Mfx_MulShRight_s32s32u8_s32(-4,2,1);
+        -:  459:
+        1:  460:    TEST_CHECK(result == -4);
+        -:  461:
+        1:  462:}
+        -:  463:
+        -:  464:/**
+        -:  465:  @brief Combinations of division and shift left test
+        -:  466:
+        -:  467:  This routine tests a multiplication between the two arguments and applies a shift right defined by the third argument.
+        -:  468:*/
+        -:  469:
+        -:  470:
+        1:  471:void Test_Of_Mfx_DivShLeft_s16s16u8_s16(void)
+        -:  472:{
+        -:  473:    sint16 result;
+        -:  474:
+        1:  475:    result = Mfx_DivShLeft_s16s16u8_s16(MIN16,1,1);
+        -:  476:
+        1:  477:    TEST_CHECK(result == MIN16);
+        -:  478:
+        1:  479:    result = Mfx_DivShLeft_s16s16u8_s16(MAX16,1,1);
+        -:  480:
+        1:  481:    TEST_CHECK(result == MAX16);
+        -:  482:
+        1:  483:    result = Mfx_DivShLeft_s16s16u8_s16(MIN16,1,0);
+        -:  484:
+        1:  485:    TEST_CHECK(result == MIN16);
+        -:  486:
+        1:  487:    result = Mfx_DivShLeft_s16s16u8_s16(-4,2,1);
+        -:  488:
+        1:  489:    TEST_CHECK(result == -4);
+        1:  490:}
+        -:  491:
+        -:  492:
+        1:  493:void Test_Of_Mfx_DivShLeft_s32s32u8_s32(void)
+        -:  494:{
+        -:  495:    sint32 result;
+        -:  496:
+        1:  497:    result = Mfx_DivShLeft_s32s32u8_s32(MIN32,1,1);
+        -:  498:
+        1:  499:    TEST_CHECK(result == MIN32);
+        -:  500:
+        1:  501:    result = Mfx_DivShLeft_s32s32u8_s32(MAX32,1,1);
+        1:  502:    TEST_CHECK(result == MAX32);
+        -:  503:
+        1:  504:     result = Mfx_DivShLeft_s32s32u8_s32(-4,2,1);
+        -:  505:
+        1:  506:    TEST_CHECK(result == -4);
+        1:  507:}
+        -:  508:
+        -:  509:/**
+        -:  510:  @brief Modulo test
+        -:  511:
+        -:  512:  This routine tests the remainder of the division x_value / y_value if y_value is not zero.
+        -:  513:*/
+        1:  514:void Test_Of_Mfx_Mod_s16(void)
+        -:  515:{
+        -:  516:    sint16 result;
+        -:  517:
+        1:  518:    result = Mfx_Mod_s16(1,0);
+        -:  519:
+        1:  520:    TEST_CHECK(result == 0);
+        -:  521:
+        1:  522:    result = Mfx_Mod_s16(-3,2);
+        -:  523:
+        1:  524:    TEST_CHECK(result == 1);
+        -:  525:
+        1:  526:    result = Mfx_Mod_s16(3,2);
+        -:  527:
+        1:  528:    TEST_CHECK(result == 1);
+        1:  529:}
+        -:  530:
+        1:  531:void Test_Of_Mfx_Mod_s32(void)
+        -:  532:{
+        -:  533:    sint32 result;
+        -:  534:
+        1:  535:    result = Mfx_Mod_s32(1,0);
+        -:  536:
+        1:  537:    TEST_CHECK(result == 0);
+        -:  538:
+        1:  539:    result = Mfx_Mod_s32(-3,2);
+        -:  540:
+        1:  541:    TEST_CHECK(result == 1);
+        -:  542:
+        1:  543:    result = Mfx_Mod_s32(3,2);
+        -:  544:
+        1:  545:    TEST_CHECK(result == 1);
+        1:  546:}
+        -:  547:
+        -:  548:/**
+        -:  549:  @brief Limiting test
+        -:  550:
+        -:  551:  This routine tests the input value between Lower Bound and Upper Bound.
+        -:  552:*/
+        1:  553:void Test_Of_Mfx_Limit_s16(void)
+        -:  554:{
+        -:  555:    sint16 result;
+        -:  556:
+        1:  557:    result = Mfx_Limit_s16(0,1,2);
+        -:  558:
+        1:  559:    TEST_CHECK(result == 1);
+        -:  560:
+        1:  561:     result = Mfx_Limit_s16(3,1,2);
+        -:  562:
+        1:  563:    TEST_CHECK(result == 2);
+        -:  564:   
+        1:  565:    result = Mfx_Limit_s16(1,0,2);
+        -:  566:
+        1:  567:    TEST_CHECK(result == 1);
+        -:  568:
+        1:  569:}
+        -:  570:
+        1:  571:void Test_Of_Mfx_Limit_s32(void)
+        -:  572:{
+        -:  573:    sint32 result;
+        -:  574:
+        1:  575:    result = Mfx_Limit_s32(0,1,2);
+        -:  576:
+        1:  577:    TEST_CHECK(result == 1);
+        -:  578:
+        1:  579:     result = Mfx_Limit_s32(3,1,2);
+        -:  580:
+        1:  581:    TEST_CHECK(result == 2);
+        -:  582:   
+        1:  583:    result = Mfx_Limit_s32(1,0,2);
+        -:  584:
+        1:  585:    TEST_CHECK(result == 1);
+        -:  586:
+        1:  587:}
+        -:  588:
+        -:  589:/**
+        -:  590:  @brief Limitations with only one value for minimum and maximum test
+        -:  591:
+        -:  592:  The routine tests a value to a minimum or a maximum that depends on the sign of the minmax_value.
+        -:  593:*/
+        -:  594:
+        1:  595:void Test_Of_Mfx_Minmax_s16(void)
+        -:  596:{
+        -:  597:    sint16 result;
+        -:  598:
+        1:  599:    result = Mfx_Minmax_s16(1,0);
+        -:  600:
+        1:  601:    TEST_CHECK(result == 0);
+        -:  602:
+        1:  603:    result = Mfx_Minmax_s16(-2,-1);
+        -:  604:
+        1:  605:    TEST_CHECK(result == -1);
+        -:  606:     
+        1:  607:    result = Mfx_Minmax_s16(1,2);
+        -:  608:
+        1:  609:    TEST_CHECK(result == 1);
+        1:  610:}
+        -:  611:
+        1:  612:void Test_Of_Mfx_Minmax_s32(void)
+        -:  613:{
+        -:  614:    sint32 result;
+        -:  615:
+        1:  616:    result = Mfx_Minmax_s32(1,0);
+        -:  617:
+        1:  618:    TEST_CHECK(result == 0);
+        -:  619:
+        1:  620:    result = Mfx_Minmax_s32(-2,-1);
+        -:  621:
+        1:  622:    TEST_CHECK(result == -1);
+        -:  623:     
+        1:  624:    result = Mfx_Minmax_s32(1,2);
+        -:  625:
+        1:  626:    TEST_CHECK(result == 1);
+        1:  627:}
+        -:  628:
+        -:  629:/**
+        -:  630:  @brief Minimum and maximum test
+        -:  631:
+        -:  632:  This routine tests the minimum between two values.
+        -:  633:*/
+        -:  634:
+        1:  635:void Test_Of_Mfx_Min_s16(void)
+        -:  636:{
+        -:  637:    sint16 result;
+        -:  638:
+        1:  639:    result = Mfx_Min_s16(1,2);
+        -:  640:
+        1:  641:    TEST_CHECK(result == 1);
+        -:  642:
+        1:  643:    result = Mfx_Min_s16(2,1);
+        -:  644:
+        1:  645:    TEST_CHECK(result == 1);
+        -:  646:     
+        1:  647:}
+        -:  648:
+        1:  649:void Test_Of_Mfx_Min_s32(void)
+        -:  650:{
+        -:  651:    sint16 result;
+        -:  652:
+        1:  653:    result = Mfx_Min_s32(1,2);
+        -:  654:
+        1:  655:    TEST_CHECK(result == 1);
+        -:  656:
+        1:  657:    result = Mfx_Min_s32(2,1);
+        -:  658:
+        1:  659:    TEST_CHECK(result == 1);
+        -:  660:     
+        1:  661:}
+        -:  662:
+        1:  663:void Test_Of_Mfx_Max_s16(void)
+        -:  664:{
+        -:  665:    sint16 result;
+        -:  666:
+        1:  667:    result = Mfx_Max_s16(1,2);
+        -:  668:
+        1:  669:    TEST_CHECK(result == 2);
+        -:  670:
+        1:  671:    result = Mfx_Max_s16(2,1);
+        -:  672:
+        1:  673:    TEST_CHECK(result == 2);
+        -:  674:     
+        1:  675:}
+        -:  676:
+        1:  677:void Test_Of_Mfx_Max_s32(void)
+        -:  678:{
+        -:  679:    sint16 result;
+        -:  680:
+        1:  681:    result = Mfx_Max_s32(1,2);
+        -:  682:
+        1:  683:    TEST_CHECK(result == 2);
+        -:  684:
+        1:  685:    result = Mfx_Max_s32(2,1);
+        -:  686:
+        1:  687:    TEST_CHECK(result == 2);
+        -:  688:     
+        1:  689:}
+        -:  690:
+        -:  691:/**
+        -:  692:  @brief 16-Bit to 8-Bit 2n Scaled Integer Conversion Test
+        -:  693:
+        -:  694:  The routine tests convertion a scaled 16-bit integer to a scaled 8-bit integer. 
+        -:  695:*/
+        -:  696:
+        1:  697:void Test_Of_Mfx_ConvertP2_s16_s8(void)
+        -:  698:{
+        -:  699:    sint8 result;
+        -:  700:
+        1:  701:    result = Mfx_ConvertP2_s16_s8(1, 1, -15);
+        1:  702:    TEST_CHECK(result == MIN8);
+        -:  703:
+        1:  704:    result = Mfx_ConvertP2_s16_s8(1,1,10);
+        1:  705:    TEST_CHECK(result == MAX8);
+        -:  706:
+        1:  707:    result = Mfx_ConvertP2_s16_s8(1,1,1);
+        1:  708:    TEST_CHECK(result == 1);
+        -:  709:
+        1:  710:    result = Mfx_ConvertP2_s16_s8(1,1,0);
+        1:  711:    TEST_CHECK(result == 0);
+        -:  712:
+        1:  713:}
+        -:  714:
+        1:  715:void Test_Of_Mfx_ConvertP2_u16_u8(void)
+        -:  716:{
+        -:  717:    uint16 result;
+        -:  718:
+        1:  719:    result = Mfx_ConvertP2_u16_u8(1, 1, -15);
+        1:  720:    TEST_CHECK(result == UMIN8);
+        -:  721:
+        1:  722:    result = Mfx_ConvertP2_u16_u8(1,1,10);
+        1:  723:    TEST_CHECK(result == UMAX8);
+        -:  724:
+        1:  725:    result = Mfx_ConvertP2_u16_u8(1,1,1);
+        1:  726:    TEST_CHECK(result == 1);
+        -:  727:
+        1:  728:    result = Mfx_ConvertP2_u16_u8(1,1,0);
+        1:  729:    TEST_CHECK(result == 0);
+        -:  730:
+        1:  731:}
+        -:  732:
+        -:  733:/**
+        -:  734:  @brief 8-Bit to 16-Bit 2n Scaled Integer Conversion Test
+        -:  735:
+        -:  736:  The routine tests convertion a scaled 8-bit integer to a scaled 16-bit integer.
+        -:  737:*/
+        -:  738:
+        1:  739:void Test_Of_Mfx_ConvertP2_s8_s16(void)
+        -:  740:{
+        -:  741:    sint16 result;
+        -:  742:
+        1:  743:    result = Mfx_ConvertP2_s8_s16(1, 1, -7);
+        1:  744:    TEST_CHECK(result == MIN16);
+        -:  745:
+        1:  746:    result = Mfx_ConvertP2_s8_s16(1,1,17);
+        1:  747:    TEST_CHECK(result == MAX16);
+        -:  748:
+        1:  749:    result = Mfx_ConvertP2_s8_s16(1,1,1);
+        1:  750:    TEST_CHECK(result == 1);
+        -:  751:
+        1:  752:    result = Mfx_ConvertP2_s8_s16(1,1,0);
+        1:  753:    TEST_CHECK(result == 0);
+        -:  754:
+        1:  755:}
+        -:  756:
+        1:  757:void Test_Of_Mfx_ConvertP2_u8_u16(void)
+        -:  758:{
+        -:  759:    uint16 result;
+        -:  760:
+        1:  761:    result = Mfx_ConvertP2_u8_u16(1, 1, -7);
+        1:  762:    TEST_CHECK(result == UMIN16);
+        -:  763:
+        1:  764:    result = Mfx_ConvertP2_u8_u16(1,1,17);
+        1:  765:    TEST_CHECK(result == UMAX16);
+        -:  766:
+        1:  767:    result = Mfx_ConvertP2_u8_u16(1,1,1);
+        1:  768:    TEST_CHECK(result == 1);
+        -:  769:
+        1:  770:    result = Mfx_ConvertP2_u8_u16(1,1,0);
+        1:  771:    TEST_CHECK(result == 0);
+        -:  772:
+        1:  773:}
+        -:  774:
+        -:  775:/**
+        -:  776:  @brief 32-Bit to 16-Bit 2n Scaled Integer Conversion Test
+        -:  777:
+        -:  778:  The routine tests convertion a scaled 32-bit integer to a scaled 16-bit integer.
+        -:  779:*/
+        -:  780:
+        1:  781:void Test_Of_Mfx_ConvertP2_s32_s16(void)
+        -:  782:{
+        -:  783:    sint16 result;
+        -:  784:
+        1:  785:    result = Mfx_ConvertP2_s32_s16(1, 1, -31);
+        1:  786:    TEST_CHECK(result == MIN16);
+        -:  787:
+        1:  788:    result = Mfx_ConvertP2_s32_s16(1,1,17);
+        1:  789:    TEST_CHECK(result == MAX16);
+        -:  790:
+        1:  791:    result = Mfx_ConvertP2_s32_s16(1,1,1);
+        1:  792:    TEST_CHECK(result == 1);
+        -:  793:
+        1:  794:    result = Mfx_ConvertP2_s32_s16(1,1,0);
+        1:  795:    TEST_CHECK(result == 0);
+        -:  796:
+        1:  797:}
+        -:  798:
+        1:  799:void Test_Of_Mfx_ConvertP2_u32_u16(void)
+        -:  800:{
+        -:  801:    uint16 result;
+        -:  802:
+        1:  803:    result = Mfx_ConvertP2_u32_u16(1, 1, -31);
+        1:  804:    TEST_CHECK(result == UMIN16);
+        -:  805:
+        1:  806:    result = Mfx_ConvertP2_u32_u16(1,1,17);
+        1:  807:    TEST_CHECK(result == UMAX16);
+        -:  808:
+        1:  809:    result = Mfx_ConvertP2_u32_u16(1,1,1);
+        1:  810:    TEST_CHECK(result == 1);
+        -:  811:
+        1:  812:    result = Mfx_ConvertP2_u32_u16(1,1,0);
+        1:  813:    TEST_CHECK(result == 0);
+        1:  814:}
+        -:  815:
+        -:  816:/**
+        -:  817:  @brief 16-Bit to 32-Bit 2n Scaled Integer Conversion Test
+        -:  818:
+        -:  819:  The routine tests convertion a scaled 16-bit integer to a scaled 32-bit integer.
+        -:  820:*/
+        -:  821:
+        1:  822:void Test_Of_Mfx_ConvertP2_s16_s32(void)
+        -:  823:{
+        -:  824:    sint32 result;
+        -:  825:
+        1:  826:    result = Mfx_ConvertP2_s16_s32(1, 1, -15);
+        1:  827:    TEST_CHECK(result ==MIN32);
+        -:  828:
+        1:  829:    result = Mfx_ConvertP2_s16_s32(1,1,33);
+        1:  830:    TEST_CHECK(result == MAX32);
+        -:  831:
+        1:  832:    result = Mfx_ConvertP2_s16_s32(1,1,1);
+        1:  833:    TEST_CHECK(result == 1);
+        -:  834:
+        1:  835:    result = Mfx_ConvertP2_s16_s32(1,1,0);
+        1:  836:    TEST_CHECK(result == 0);
+        1:  837:}
+        -:  838:
+        1:  839:void Test_Of_Mfx_ConvertP2_u16_u32(void)
+        -:  840:{
+        -:  841:    uint32 result;
+        -:  842:
+        1:  843:    result = Mfx_ConvertP2_u16_u32(1, 16, 0);
+        1:  844:    TEST_CHECK(result ==UMIN32);
+        -:  845:
+        1:  846:    result = Mfx_ConvertP2_u16_u32(1,1,33);
+        1:  847:    TEST_CHECK(result == UMAX32);
+        -:  848:
+        1:  849:    result = Mfx_ConvertP2_u16_u32(1,1,1);
+        1:  850:    TEST_CHECK(result == 1);
+        -:  851:
+        1:  852:    result = Mfx_ConvertP2_u16_u32(1,1,0);
+        1:  853:    TEST_CHECK(result == 0);
+        -:  854:
+        1:  855:}
+        -:  856:/**
+        -:  857:  @brief 16-Bit Multiplication of 2n Scaled Integer test
+        -:  858:
+        -:  859:  The routine tests multiplication two 16-bit integers with scaling factors set by input parameters.
+        -:  860:*/
+        -:  861:
+        1:  862:void Test_Of_Mfx_MulP2_s16s16_s16(void)
+        -:  863:{
+        -:  864:    sint16 result;
+        -:  865:
+        1:  866:    result = Mfx_MulP2_s16s16_s16(1,1,1, 1, -30);
+        1:  867:    TEST_CHECK(result ==MIN16);
+        -:  868:
+        1:  869:    result = Mfx_MulP2_s16s16_s16(1,1,1,1,18);
+        1:  870:    TEST_CHECK(result == MAX16);
+        -:  871:
+        1:  872:    result = Mfx_MulP2_s16s16_s16(1,1,1,1,1);
+        1:  873:    TEST_CHECK(result == 1);
+        -:  874:
+        1:  875:    result = Mfx_MulP2_s16s16_s16(1,1,2,1,1);
+        1:  876:    TEST_CHECK(result == 1);
+        -:  877:
+        -:  878:
+        1:  879:}
+        -:  880:
+        1:  881:void Test_Of_Mfx_MulP2_u16u16_u16(void)
+        -:  882:{
+        -:  883:    uint16 result;
+        -:  884:
+        1:  885:    result = Mfx_MulP2_u16u16_u16(1,1,1, 1, -30);
+        1:  886:    TEST_CHECK(result == UMIN16);
+        -:  887:
+        1:  888:    result = Mfx_MulP2_u16u16_u16(1,1,1,1,19);
+        1:  889:    TEST_CHECK(result == UMAX16);
+        -:  890:
+        1:  891:    result = Mfx_MulP2_u16u16_u16(1,1,1,1,1);
+        1:  892:    TEST_CHECK(result == 1);
+        -:  893:
+        1:  894:    result = Mfx_MulP2_u16u16_u16(1,1,2,1,1);
+        1:  895:    TEST_CHECK(result == 1);
+        1:  896:}
+        -:  897:
+        -:  898:/**
+        -:  899:  @brief 32-Bit Multiplication of 2n Scaled Integer test
+        -:  900:
+        -:  901:  The routine tests multiplication two 32-bit integers with scaling factors set by input parameters.
+        -:  902:*/
+        1:  903:void Test_Of_Mfx_MulP2_s32s32_s32(void)
+        -:  904:{
+        -:  905:    sint32 result;
+        -:  906:
+        1:  907:    result = Mfx_MulP2_s32s32_s32(1,1,1, 1, -62);
+        1:  908:    TEST_CHECK(result ==MIN32);
+        -:  909:
+        1:  910:    result = Mfx_MulP2_s32s32_s32(1,1,1,1,34);
+        1:  911:    TEST_CHECK(result == MAX32);
+        -:  912:
+        1:  913:    result = Mfx_MulP2_s32s32_s32(1,1,1,1,1);
+        1:  914:    TEST_CHECK(result == 1);
+        -:  915:
+        1:  916:    result = Mfx_MulP2_s32s32_s32(1,1,2,1,1);
+        1:  917:    TEST_CHECK(result == 1);
+        -:  918:
+        1:  919:}
+        -:  920:
+        -:  921:
+        1:  922:void Test_Of_Mfx_MulP2_u32u32_u32(void)
+        -:  923:{
+        -:  924:    uint32 result;
+        -:  925:
+        1:  926:    result = Mfx_MulP2_u32u32_u32(1,1,1, 1, -62);
+        1:  927:    TEST_CHECK(result == UMIN32);
+        -:  928:
+        1:  929:    result = Mfx_MulP2_u32u32_u32(1,1,1,1,34);
+        1:  930:    TEST_CHECK(result == UMAX32);
+        -:  931:
+        1:  932:    result = Mfx_MulP2_u32u32_u32(1,1,1,1,1);
+        1:  933:    TEST_CHECK(result == 1);
+        -:  934:
+        1:  935:    result = Mfx_MulP2_u32u32_u32(1,1,2,1,1);
+        1:  936:    TEST_CHECK(result == 1);
+        1:  937:}
+        -:  938:
+        -:  939:/**
+        -:  940:  @brief 16-Bit Division of 2n Scaled Integer test
+        -:  941:
+        -:  942:  The routine tests division of the two 16-bit integers with scaling factors set by input parameters.
+        -:  943:*/
+        -:  944:
+        1:  945:void Test_Of_Mfx_DivP2_s16s16_s16(void)
+        -:  946:{
+        -:  947:    sint16 result;
+        -:  948:
+        1:  949:    result = Mfx_DivP2_s16s16_s16(1,1,1, 1, -16);
+        1:  950:    TEST_CHECK(result ==MIN16);
+        -:  951:
+        1:  952:    result = Mfx_DivP2_s16s16_s16(1,1,1,1,32);
+        1:  953:    TEST_CHECK(result == MAX16);
+        -:  954:
+        1:  955:    result = Mfx_DivP2_s16s16_s16(1,1,1,1,1);
+        1:  956:    TEST_CHECK(result == 4);
+        -:  957:
+        1:  958:    result = Mfx_DivP2_s16s16_s16(1,1,2,1,1);
+        1:  959:    TEST_CHECK(result == 4);
+        -:  960:
+        -:  961:
+        1:  962:}
+        -:  963:
+        1:  964:void Test_Of_Mfx_DivP2_u16u16_u16(void)
+        -:  965:{
+        -:  966:    uint16 result;
+        -:  967:
+        1:  968:    result = Mfx_DivP2_u16u16_u16(1,1,1, 1, -16);
+        1:  969:    TEST_CHECK(result == UMIN16);
+        -:  970:
+        1:  971:    result = Mfx_DivP2_u16u16_u16(1,1,1,1,32);
+        1:  972:    TEST_CHECK(result == UMAX16);
+        -:  973:
+        1:  974:    result = Mfx_DivP2_u16u16_u16(1,1,1,1,1);
+        1:  975:    TEST_CHECK(result == 4);
+        -:  976:
+        1:  977:    result = Mfx_DivP2_u16u16_u16(1,1,2,1,1);
+        1:  978:    TEST_CHECK(result == 4);
+        -:  979:
+        -:  980:    
+        1:  981:    result = Mfx_DivP2_u16u16_u16(0,0,0,0,0);
+        1:  982:    TEST_CHECK(result == UMAX16);
+        -:  983:
+        1:  984:}
+        -:  985:
+        -:  986:/**
+        -:  987:  @brief 32-Bit Division of 2n Scaled Integer test
+        -:  988:
+        -:  989:  The routine tests division of the two 32-bit integers with scaling factors set by input parameters.
+        -:  990:*/
+        1:  991:void Test_Of_Mfx_DivP2_s32s32_s32(void)
+        -:  992:{
+        -:  993:    sint32 result;
+        -:  994:
+        1:  995:    result = Mfx_DivP2_s32s32_s32(1,1,1, 1, -32);
+        1:  996:    TEST_CHECK(result ==MIN32);
+        -:  997:
+        1:  998:    result = Mfx_DivP2_s32s32_s32(1,1,1,1,64);
+        1:  999:    TEST_CHECK(result == MAX32);
+        -: 1000:
+        1: 1001:    result = Mfx_DivP2_s32s32_s32(1,0,1,1,1);
+        1: 1002:    TEST_CHECK(result == MAX32);
+        -: 1003:
+        1: 1004:    result = Mfx_DivP2_s32s32_s32(-1,0,1,1,1);
+        1: 1005:    TEST_CHECK(result == MIN32);
+        -: 1006:
+        1: 1007:    result = Mfx_DivP2_s32s32_s32(1,1,1,0,1);
+        1: 1008:    TEST_CHECK(result == 2);
+        -: 1009:
+        1: 1010:    result = Mfx_DivP2_s32s32_s32(1,1,2,0,1);
+        1: 1011:    TEST_CHECK(result == 2);
+        1: 1012:}
+        -: 1013:
+        -: 1014:
+        1: 1015:void Test_Of_Mfx_DivP2_u32u32_u32(void)
+        -: 1016:{
+        -: 1017:    uint32 result;
+        -: 1018:
+        1: 1019:    result = Mfx_DivP2_u32u32_u32(1,1,1, 1, -32);
+        1: 1020:    TEST_CHECK(result ==UMIN32);
+        -: 1021:
+        1: 1022:    result = Mfx_DivP2_u32u32_u32(1,1,1,1,64);
+        1: 1023:    TEST_CHECK(result == UMAX32);
+        -: 1024:
+        1: 1025:    result = Mfx_DivP2_u32u32_u32(1,0,1,1,1);
+        1: 1026:    TEST_CHECK(result == UMAX32);
+        -: 1027:
+        1: 1028:    result = Mfx_DivP2_u32u32_u32(1,1,1,0,1);
+        1: 1029:    TEST_CHECK(result == 2);
+        -: 1030:
+        1: 1031:    result = Mfx_DivP2_u32u32_u32(1,1,2,0,1);
+        1: 1032:    TEST_CHECK(result == 2);
+        -: 1033:
+        1: 1034:}
+        -: 1035:/**
+        -: 1036:  @brief 16-Bit Addition of 2n Scaled Integer test
+        -: 1037:
+        -: 1038:  The routine tests addition of the two 16-bit integers with scaling factors set by input parameters.
+        -: 1039:*/
+        -: 1040:
+        1: 1041:void Test_Of_Mfx_AddP2_s16s16_s16(void)
+        -: 1042:{
+        -: 1043:    sint16 result;
+        -: 1044:
+        1: 1045:    result = Mfx_AddP2_s16s16_s16(1,1,2, 1, 17);
+        1: 1046:    TEST_CHECK(result ==MAX16);
+        -: 1047:
+        1: 1048:    result = Mfx_AddP2_s16s16_s16(1,1,2,1,1);
+        1: 1049:    TEST_CHECK(result == 1);
+        -: 1050:
+        1: 1051:    result = Mfx_AddP2_s16s16_s16(1,1,2,1,2);
+        1: 1052:    TEST_CHECK(result == 3);
+        -: 1053:
+        1: 1054:    result = Mfx_AddP2_s16s16_s16(1,1,1,17,1);
+        1: 1055:    TEST_CHECK(result ==MAX16);
+        -: 1056:
+        1: 1057:     result = Mfx_AddP2_s16s16_s16(1,1,1,2,1);
+        1: 1058:    TEST_CHECK(result ==1);
+        -: 1059:
+        1: 1060:    result = Mfx_AddP2_s16s16_s16(1,1,1,2,2);
+        1: 1061:    TEST_CHECK(result ==3);
+        -: 1062:
+        1: 1063:    result = Mfx_AddP2_s16s16_s16(1,MIN16,2,1,1);
+        1: 1064:    TEST_CHECK(result == MIN16);
+        -: 1065:
+        1: 1066:}
+        -: 1067:
+        1: 1068:void Test_Of_Mfx_AddP2_u16u16_u16(void)
+        -: 1069:{
+        -: 1070:    uint16 result;
+        -: 1071:
+        1: 1072:    result = Mfx_AddP2_u16u16_u16(1,1,2, 1, 17);
+        1: 1073:    TEST_CHECK(result ==UMAX16);
+        -: 1074:
+        1: 1075:    result = Mfx_AddP2_u16u16_u16(1,1,2,1,1);
+        1: 1076:    TEST_CHECK(result == 1);
+        -: 1077:
+        1: 1078:    result = Mfx_AddP2_u16u16_u16(1,1,2,1,2);
+        1: 1079:    TEST_CHECK(result == 3);
+        -: 1080:
+        1: 1081:    result = Mfx_AddP2_u16u16_u16(1,1,1,17,1);
+        1: 1082:    TEST_CHECK(result ==UMAX16);
+        -: 1083:
+        1: 1084:     result = Mfx_AddP2_u16u16_u16(1,1,1,2,1);
+        1: 1085:    TEST_CHECK(result ==1);
+        -: 1086:
+        1: 1087:    result = Mfx_AddP2_u16u16_u16(1,1,1,2,2);
+        1: 1088:    TEST_CHECK(result ==3);
+        -: 1089:
+        1: 1090:    result = Mfx_AddP2_u16u16_u16(1,UMIN16,2,1,1);
+        1: 1091:    TEST_CHECK(result == UMIN16);
+        -: 1092:
+        1: 1093:}
+        -: 1094:
+        -: 1095:/**
+        -: 1096:  @brief 32-Bit Addition of 2n Scaled Integer test
+        -: 1097:
+        -: 1098:  The routine tests addition of the two 32-bit integers with scaling factors set by input parameters.
+        -: 1099:*/
+        1: 1100:void Test_Of_Mfx_AddP2_s32s32_s32(void)
+        -: 1101:{
+        -: 1102:    sint32 result;
+        -: 1103:
+        1: 1104:    result = Mfx_AddP2_s32s32_s32(1,1,2, 1, 33);
+        1: 1105:    TEST_CHECK(result ==MAX32);
+        -: 1106:
+        1: 1107:    result = Mfx_AddP2_s32s32_s32(1,1,2,1,1);
+        1: 1108:    TEST_CHECK(result == 1);
+        -: 1109:
+        1: 1110:    result = Mfx_AddP2_s32s32_s32(1,1,2,1,2);
+        1: 1111:    TEST_CHECK(result == 3);
+        -: 1112:
+        1: 1113:    result = Mfx_AddP2_s32s32_s32(1,1,1,33,1);
+        1: 1114:    TEST_CHECK(result ==MAX32);
+        -: 1115:
+        1: 1116:     result = Mfx_AddP2_s32s32_s32(1,1,1,2,1);
+        1: 1117:    TEST_CHECK(result ==1);
+        -: 1118:
+        1: 1119:    result = Mfx_AddP2_s32s32_s32(1,1,1,2,2);
+        1: 1120:    TEST_CHECK(result ==3);
+        -: 1121:
+        1: 1122:    result = Mfx_AddP2_s32s32_s32(0,MIN32,0,1,1);
+        1: 1123:    TEST_CHECK(result == MIN32);
+        -: 1124:
+        1: 1125:}
+        -: 1126:
+        1: 1127:void Test_Of_Mfx_AddP2_u32u32_u32(void)
+        -: 1128:{
+        -: 1129:    uint32 result;
+        -: 1130:
+        1: 1131:    result = Mfx_AddP2_u32u32_u32(1,1,2, 1, 33);
+        1: 1132:    TEST_CHECK(result ==UMAX32);
+        -: 1133:
+        1: 1134:    result = Mfx_AddP2_u32u32_u32(1,1,2,1,1);
+        1: 1135:    TEST_CHECK(result == 1);
+        -: 1136:
+        1: 1137:    result = Mfx_AddP2_u32u32_u32(1,1,2,1,2);
+        1: 1138:    TEST_CHECK(result == 3);
+        -: 1139:
+        1: 1140:    result = Mfx_AddP2_u32u32_u32(1,1,1,33,1);
+        1: 1141:    TEST_CHECK(result ==UMAX32);
+        -: 1142:
+        1: 1143:     result = Mfx_AddP2_u32u32_u32(1,1,1,2,1);
+        1: 1144:    TEST_CHECK(result ==1);
+        -: 1145:
+        1: 1146:    result = Mfx_AddP2_u32u32_u32(1,1,1,2,2);
+        1: 1147:    TEST_CHECK(result ==3);
+        -: 1148:
+        1: 1149:    result = Mfx_AddP2_u32u32_u32(1,UMIN32,2,1,1);
+        1: 1150:    TEST_CHECK(result == UMIN32);
+        -: 1151:
+        1: 1152:}
+        -: 1153:
+        -: 1154:/**
+        -: 1155:  @brief 16-Bit Subtraction of 2n Scaled Integer test
+        -: 1156:
+        -: 1157:  The routine tests subtraction of the two 16-bit integers with scaling factors set by input parameters.
+        -: 1158:*/
+        -: 1159:
+        1: 1160:void Test_Of_Mfx_SubP2_s16s16_s16(void)
+        -: 1161:{
+        -: 1162:    sint16 result;
+        -: 1163:
+        1: 1164:    result = Mfx_SubP2_s16s16_s16(1,1,2, 1, 17);
+        1: 1165:    TEST_CHECK(result ==MAX16);
+        -: 1166:
+        1: 1167:    result = Mfx_SubP2_s16s16_s16(1,1,2,1,1);
+        1: 1168:    TEST_CHECK(result == 0);
+        -: 1169:
+        1: 1170:    result = Mfx_SubP2_s16s16_s16(1,1,2,1,2);
+        1: 1171:    TEST_CHECK(result == 1);
+        -: 1172:
+        1: 1173:    result = Mfx_SubP2_s16s16_s16(1,1,1,17,1);
+        1: 1174:    TEST_CHECK(result ==MAX16);
+        -: 1175:
+        1: 1176:     result = Mfx_SubP2_s16s16_s16(1,1,1,2,1);
+        1: 1177:    TEST_CHECK(result ==0);
+        -: 1178:
+        1: 1179:    result = Mfx_SubP2_s16s16_s16(1,1,1,2,2);
+        1: 1180:    TEST_CHECK(result ==1);
+        -: 1181:
+        1: 1182:    result = Mfx_SubP2_s16s16_s16(1,MIN16,2,1,1);
+        1: 1183:    TEST_CHECK(result == MIN16);
+        -: 1184:
+        1: 1185:}
+        -: 1186:
+        1: 1187:void Test_Of_Mfx_SubP2_u16u16_u16(void)
+        -: 1188:{
+        -: 1189:    uint16 result;
+        -: 1190:
+        1: 1191:    result = Mfx_SubP2_u16u16_u16(1,1,2, 1, 17);
+        1: 1192:    TEST_CHECK(result ==UMAX16);
+        -: 1193:
+        1: 1194:    result = Mfx_SubP2_u16u16_u16(1,1,2,1,1);
+        1: 1195:    TEST_CHECK(result == 0);
+        -: 1196:
+        1: 1197:    result = Mfx_SubP2_u16u16_u16(1,1,2,1,2);
+        1: 1198:    TEST_CHECK(result == 1);
+        -: 1199:
+        1: 1200:    result = Mfx_SubP2_u16u16_u16(1,1,1,17,1);
+        1: 1201:    TEST_CHECK(result ==UMAX16);
+        -: 1202:
+        1: 1203:     result = Mfx_SubP2_u16u16_u16(1,1,1,2,1);
+        1: 1204:    TEST_CHECK(result ==0);
+        -: 1205:
+        1: 1206:    result = Mfx_SubP2_u16u16_u16(1,1,1,2,2);
+        1: 1207:    TEST_CHECK(result ==1);
+        -: 1208:
+        1: 1209:    result = Mfx_SubP2_u16u16_u16(0,UMIN16,0,1,1);
+        1: 1210:    TEST_CHECK(result == UMIN16);
+        1: 1211:}
+        -: 1212:/**
+        -: 1213:  @brief 32-Bit Subtraction of 2n Scaled Integer test
+        -: 1214:
+        -: 1215:  The routine tests subtraction of the two 32-bit integers with scaling factors set by input parameters.
+        -: 1216:*/
+        1: 1217:void Test_Of_Mfx_SubP2_s32s32_s32(void)
+        -: 1218:{
+        -: 1219:    sint32 result;
+        -: 1220:
+        1: 1221:    result = Mfx_SubP2_s32s32_s32(1,1,2, 1, 33);
+        1: 1222:    TEST_CHECK(result ==MAX32);
+        -: 1223:
+        1: 1224:    result = Mfx_SubP2_s32s32_s32(1,1,2,1,1);
+        1: 1225:    TEST_CHECK(result == 0);
+        -: 1226:
+        1: 1227:    result = Mfx_SubP2_s32s32_s32(1,1,2,1,2);
+        1: 1228:    TEST_CHECK(result == 1);
+        -: 1229:
+        1: 1230:    result = Mfx_SubP2_s32s32_s32(1,1,1,33,1);
+        1: 1231:    TEST_CHECK(result ==MAX32);
+        -: 1232:
+        1: 1233:     result = Mfx_SubP2_s32s32_s32(1,1,1,2,1);
+        1: 1234:    TEST_CHECK(result ==0);
+        -: 1235:
+        1: 1236:    result = Mfx_SubP2_s32s32_s32(1,1,1,2,2);
+        1: 1237:    TEST_CHECK(result ==1);
+        -: 1238:
+        1: 1239:    result = Mfx_SubP2_s32s32_s32(0,MIN32,0,1,1);
+        1: 1240:    TEST_CHECK(result == MIN32);
+        1: 1241:}
+        -: 1242:
+        1: 1243:void Test_Of_Mfx_SubP2_u32u32_u32(void)
+        -: 1244:{
+        -: 1245:    uint32 result;
+        -: 1246:
+        1: 1247:    result = Mfx_SubP2_u32u32_u32(1,1,2, 1, 33);
+        1: 1248:    TEST_CHECK(result ==UMAX32);
+        -: 1249:
+        1: 1250:    result = Mfx_SubP2_u32u32_u32(1,1,2,1,1);
+        1: 1251:    TEST_CHECK(result == 0);
+        -: 1252:
+        1: 1253:    result = Mfx_SubP2_u32u32_u32(1,1,2,1,2);
+        1: 1254:    TEST_CHECK(result == 1);
+        -: 1255:
+        1: 1256:    result = Mfx_SubP2_u32u32_u32(1,1,1,33,1);
+        1: 1257:    TEST_CHECK(result ==UMAX32);
+        -: 1258:
+        1: 1259:     result = Mfx_SubP2_u32u32_u32(1,1,1,2,1);
+        1: 1260:    TEST_CHECK(result ==0);
+        -: 1261:
+        1: 1262:    result = Mfx_SubP2_u32u32_u32(1,1,1,2,2);
+        1: 1263:    TEST_CHECK(result ==1);
+        -: 1264:
+        1: 1265:    result = Mfx_SubP2_u32u32_u32(0,UMIN32,0,1,1);
+        1: 1266:    TEST_CHECK(result == UMIN32);
+        1: 1267:}
+        -: 1268:/**
+        -: 1269:  @brief Absolute Difference of 2n Scaled Integer test
+        -: 1270:
+        -: 1271:  The routine tests absolute value of two 16-bit integers with scaling factors set by input parameters.
+        -: 1272:*/
+        1: 1273:void Test_Of_Mfx_AbsDiffP2_s16s16_s16(void)
+        -: 1274:{
+        -: 1275:    sint16 result;
+        -: 1276:
+        1: 1277:    result = Mfx_AbsDiffP2_s16s16_s16(1,1,2, 1, 17);
+        1: 1278:    TEST_CHECK(result ==MAX16);
+        -: 1279:
+        1: 1280:    result = Mfx_AbsDiffP2_s16s16_s16(1,1,2,1,1);
+        1: 1281:    TEST_CHECK(result == 0);
+        -: 1282:
+        1: 1283:    result = Mfx_AbsDiffP2_s16s16_s16(1,1,2,1,2);
+        1: 1284:    TEST_CHECK(result == 1);
+        -: 1285:
+        1: 1286:    result = Mfx_AbsDiffP2_s16s16_s16(1,1,1,17,1);
+        1: 1287:    TEST_CHECK(result ==MAX16);
+        -: 1288:
+        1: 1289:     result = Mfx_AbsDiffP2_s16s16_s16(1,1,1,2,1);
+        1: 1290:    TEST_CHECK(result ==0);
+        -: 1291:
+        1: 1292:    result = Mfx_AbsDiffP2_s16s16_s16(1,1,1,2,2);
+        1: 1293:    TEST_CHECK(result ==1);
+        -: 1294:
+        1: 1295:}
+        -: 1296:
+        1: 1297:void Test_Of_Mfx_AbsDiffP2_u16u16_u16(void)
+        -: 1298:{
+        -: 1299:    uint16 result;
+        -: 1300:
+        1: 1301:    result = Mfx_AbsDiffP2_u16u16_u16(1,1,2, 1, 17);
+        1: 1302:    TEST_CHECK(result ==UMAX16);
+        -: 1303:
+        1: 1304:    result = Mfx_AbsDiffP2_u16u16_u16(1,1,2,1,1);
+        1: 1305:    TEST_CHECK(result == 0);
+        -: 1306:
+        1: 1307:    result = Mfx_AbsDiffP2_u16u16_u16(1,1,2,1,2);
+        1: 1308:    TEST_CHECK(result == 1);
+        -: 1309:
+        1: 1310:    result = Mfx_AbsDiffP2_u16u16_u16(1,1,1,17,1);
+        1: 1311:    TEST_CHECK(result ==UMAX16);
+        -: 1312:
+        1: 1313:     result = Mfx_AbsDiffP2_u16u16_u16(1,1,1,2,1);
+        1: 1314:    TEST_CHECK(result ==0);
+        -: 1315:
+        1: 1316:    result = Mfx_AbsDiffP2_u16u16_u16(1,1,1,2,2);
+        1: 1317:    TEST_CHECK(result ==1);
+        -: 1318:
+        1: 1319:}
+        -: 1320:/**
+        -: 1321:  @brief Absolute Value: 16-Bit Absolute Value of 2n Scaled Integer test
+        -: 1322:
+        -: 1323:  The routine tests the absolute value of a 16-bit integer with scaling factors set by input parameters.
+        -: 1324:*/
+        1: 1325:void Test_Of_Mfx_AbsP2_s16_s16(void)
+        -: 1326:{
+        -: 1327:    sint16 result;
+        -: 1328:
+        1: 1329:    result = Mfx_AbsP2_s16_s16(1,1,-16);
+        1: 1330:    TEST_CHECK(result ==MIN16);
+        -: 1331:
+        1: 1332:    result = Mfx_AbsP2_s16_s16(1,1,17);
+        1: 1333:    TEST_CHECK(result == MAX16);
+        -: 1334:
+        1: 1335:    result = Mfx_AbsP2_s16_s16(1,1,1);
+        1: 1336:    TEST_CHECK(result == 1);
+        -: 1337:
+        1: 1338:    result = Mfx_AbsP2_s16_s16(1,2,1);
+        1: 1339:    TEST_CHECK(result ==0);
+        -: 1340:
+        1: 1341:}
+        -: 1342:
+        1: 1343:void Test_Of_Mfx_AbsP2_s16_u16(void)
+        -: 1344:{
+        -: 1345:    uint16 result;
+        -: 1346:
+        1: 1347:    result = Mfx_AbsP2_s16_u16(1,1,-16);
+        1: 1348:    TEST_CHECK(result == UMIN16);
+        -: 1349:
+        1: 1350:    result = Mfx_AbsP2_s16_u16(1,1,17);
+        1: 1351:    TEST_CHECK(result == UMAX16);
+        -: 1352:
+        1: 1353:    result = Mfx_AbsP2_s16_u16(1,1,1);
+        1: 1354:    TEST_CHECK(result == 1);
+        -: 1355:
+        1: 1356:    result = Mfx_AbsP2_s16_u16(1,2,1);
+        1: 1357:    TEST_CHECK(result ==0);
+        1: 1358:}
+        -: 1359:/**
+        -: 1360:  @brief Absolute Value: 32-Bit Absolute Value of 2n Scaled Integer test
+        -: 1361:
+        -: 1362:  The routine tests the absolute value of a 32-bit integer with scaling factors set by input parameters.
+        -: 1363:*/
+        1: 1364:void Test_Of_Mfx_AbsP2_s32_s32(void)
+        -: 1365:{
+        -: 1366:    sint32 result;
+        -: 1367:
+        1: 1368:    result = Mfx_AbsP2_s32_s32(1,1,-31);
+        1: 1369:    TEST_CHECK(result ==MIN32);
+        -: 1370:
+        1: 1371:    result = Mfx_AbsP2_s32_s32(1,1,33);
+        1: 1372:    TEST_CHECK(result == MAX32);
+        -: 1373:
+        1: 1374:    result = Mfx_AbsP2_s32_s32(1,1,1);
+        1: 1375:    TEST_CHECK(result == 1);
+        -: 1376:
+        1: 1377:    result = Mfx_AbsP2_s32_s32(1,2,1);
+        1: 1378:    TEST_CHECK(result ==0);
+        1: 1379:}
+        -: 1380:
+        1: 1381:void Test_Of_Mfx_AbsP2_s32_u32(void)
+        -: 1382:{
+        -: 1383:    uint32 result;
+        -: 1384:
+        1: 1385:    result = Mfx_AbsP2_s32_u32(1,1,-31);
+        1: 1386:    TEST_CHECK(result ==UMIN32);
+        -: 1387:
+        1: 1388:    result = Mfx_AbsP2_s32_u32(1,1,33);
+        1: 1389:    TEST_CHECK(result == UMAX32);
+        -: 1390:
+        1: 1391:    result = Mfx_AbsP2_s32_u32(1,1,1);
+        1: 1392:    TEST_CHECK(result == 1);
+        -: 1393:
+        1: 1394:    result = Mfx_AbsP2_s32_u32(1,2,1);
+        1: 1395:    TEST_CHECK(result ==0);
+        1: 1396:}
+        -: 1397:
+        -: 1398:/*
+        -: 1399:  Test list.
+        -: 1400:*/
+        -: 1401:TEST_LIST = {
+        -: 1402:   { "Test of Mfx_Add_s16s16_s16", Test_Of_Mfx_Add_s16s16_s16 },    
+        -: 1403:   { "Test of Mfx_Add_s32s32_s32", Test_Of_Mfx_Add_s32s32_s32 },   
+        -: 1404:   { "Test of Mfx_Sub_s16s16_s16", Test_Of_Mfx_Sub_s16s16_s16 },
+        -: 1405:   { "Test of Mfx_Sub_s32s32_s32", Test_Of_Mfx_Sub_s32s32_s32 },
+        -: 1406:   { "Test of Mfx_Abs_s16_s16", Test_Of_Mfx_Abs_s16_s16 },
+        -: 1407:   { "Test of Mfx_Abs_s32_s32", Test_Of_Mfx_Abs_s32_s32 },
+        -: 1408:   { "Test of Mfx_AbsDiff_s16s16_s16", Test_Of_Mfx_AbsDiff_s16s16_s16 },
+        -: 1409:   { "Test of Mfx_AbsDiff_s32s32_s32", Test_Of_Mfx_AbsDiff_s32s32_s32 },
+        -: 1410:   { "Test of Mfx_AbsDiff_u32u32_u32", Test_Of_Mfx_AbsDiff_u32u32_u32 },
+        -: 1411:   { "Test of Mfx_Mul_s16s16_s16", Test_Of_Mfx_Mul_s16s16_s16 },
+        -: 1412:   { "Test of Mfx_Mul_s32s32_s32", Test_Of_Mfx_Mul_s32s32_s32 },
+        -: 1413:   { "Test of Mfx_Div_s16s16_s16", Test_Of_Mfx_Div_s16s16_s16 },
+        -: 1414:   { "Test of Mfx_Div_s32s32_s32", Test_Of_Mfx_Div_s32s32_s32 },
+        -: 1415:   { "Test of Mfx_RDiv_s16s16_s16", Test_Of_Mfx_RDiv_s16s16_s16 },
+        -: 1416:   { "Test of Mfx_RDiv_s32s32_s32", Test_Of_Mfx_RDiv_s32s32_s32 },
+        -: 1417:   { "Test of Mfx_MulDiv_s16s16_s16", Test_Of_Mfx_MulDiv_s16s16_s16 },
+        -: 1418:   { "Test of Mfx_MulDiv_s32s32_s32", Test_Of_Mfx_MulDiv_s32s32_s32 },
+        -: 1419:   { "Test of Mfx_RMulDiv_s16s16_s16", Test_Of_Mfx_RMulDiv_s16s16_s16 },
+        -: 1420:   { "Test of Mfx_RMulDiv_s32s32_s32", Test_Of_Mfx_RMulDiv_s32s32_s32 },
+        -: 1421:   { "Test of Mfx_MulShRight_s16s16u8_s32", Test_Of_Mfx_MulShRight_s16s16u8_s32 },
+        -: 1422:   { "Test of Mfx_MulShRight_s32s32u8_s32", Test_Of_Mfx_MulShRight_s32s32u8_s32 },
+        -: 1423:   { "Test of Mfx_DivShLeft_s16s16u8_s32", Test_Of_Mfx_DivShLeft_s16s16u8_s16 },
+        -: 1424:   { "Test of Mfx_DivShLeft_s32s32u8_s32", Test_Of_Mfx_DivShLeft_s32s32u8_s32 },
+        -: 1425:   { "Test of Mfx_Mod_s16", Test_Of_Mfx_Mod_s16 },
+        -: 1426:   { "Test of Mfx_Mod_s32", Test_Of_Mfx_Mod_s32 },
+        -: 1427:   { "Test of Mfx_Limit_s16", Test_Of_Mfx_Limit_s16 },
+        -: 1428:   { "Test of Mfx_Limit_s32", Test_Of_Mfx_Limit_s32 },
+        -: 1429:   { "Test of Mfx_Minmax_s16", Test_Of_Mfx_Minmax_s16 },
+        -: 1430:   { "Test of Mfx_Minmax_s32", Test_Of_Mfx_Minmax_s32 },
+        -: 1431:   { "Test of Mfx_Min_s16", Test_Of_Mfx_Min_s16 },
+        -: 1432:   { "Test of Mfx_Min_s32", Test_Of_Mfx_Min_s32 },
+        -: 1433:   { "Test of Mfx_Max_s16", Test_Of_Mfx_Max_s16 },
+        -: 1434:   { "Test of Mfx_Max_s32", Test_Of_Mfx_Max_s32 },
+        -: 1435:   { "Test of Mfx_ConvertP2_s16_s8", Test_Of_Mfx_ConvertP2_s16_s8 },
+        -: 1436:   { "Test of Mfx_ConvertP2_u16_u8", Test_Of_Mfx_ConvertP2_u16_u8 },
+        -: 1437:   { "Test of Mfx_ConvertP2_s8_s16", Test_Of_Mfx_ConvertP2_s8_s16 },
+        -: 1438:   { "Test of Mfx_ConvertP2_u8_u16", Test_Of_Mfx_ConvertP2_u8_u16 },
+        -: 1439:   { "Test of Mfx_ConvertP2_s32_s16", Test_Of_Mfx_ConvertP2_s32_s16 },
+        -: 1440:   { "Test of Mfx_ConvertP2_u32_u16", Test_Of_Mfx_ConvertP2_u32_u16 },
+        -: 1441:   { "Test of Mfx_ConvertP2_s16_s32", Test_Of_Mfx_ConvertP2_s16_s32 },
+        -: 1442:   { "Test of Mfx_ConvertP2_u16_u32", Test_Of_Mfx_ConvertP2_u16_u32 },
+        -: 1443:   { "Test of Mfx_MulP2_s16s16_s16", Test_Of_Mfx_MulP2_s16s16_s16 },
+        -: 1444:   { "Test of Mfx_MulP2_u16u16_u16", Test_Of_Mfx_MulP2_u16u16_u16 },
+        -: 1445:   { "Test of Mfx_MulP2_s32s32_s32", Test_Of_Mfx_MulP2_s32s32_s32 },
+        -: 1446:   { "Test of Mfx_MulP2_u32u32_u32", Test_Of_Mfx_MulP2_u32u32_u32 },
+        -: 1447:   { "Test of Mfx_DivP2_s16s16_s16", Test_Of_Mfx_DivP2_s16s16_s16 },
+        -: 1448:   { "Test of Mfx_DivP2_u16u16_u16", Test_Of_Mfx_DivP2_u16u16_u16 },
+        -: 1449:   { "Test of Mfx_DivP2_s32s32_s32", Test_Of_Mfx_DivP2_s32s32_s32 },
+        -: 1450:   { "Test of Mfx_DivP2_u32u32_u32", Test_Of_Mfx_DivP2_u32u32_u32 },
+        -: 1451:   { "Test of Mfx_AddP2_s16s16_s16", Test_Of_Mfx_AddP2_s16s16_s16 },
+        -: 1452:   { "Test of Mfx_AddP2_u16u16_u16", Test_Of_Mfx_AddP2_u16u16_u16 },
+        -: 1453:   { "Test of Mfx_AddP2_s32s32_s32", Test_Of_Mfx_AddP2_s32s32_s32 },
+        -: 1454:   { "Test of Mfx_AddP2_u32u32_u32", Test_Of_Mfx_AddP2_u32u32_u32 },
+        -: 1455:   { "Test of Mfx_SubP2_s16s16_s16", Test_Of_Mfx_SubP2_s16s16_s16 },
+        -: 1456:   { "Test of Mfx_SubP2_u16u16_u16", Test_Of_Mfx_SubP2_u16u16_u16 },
+        -: 1457:   { "Test of Mfx_SubP2_s32s32_s32", Test_Of_Mfx_SubP2_s32s32_s32 },
+        -: 1458:   { "Test of Mfx_SubP2_u32u32_u32", Test_Of_Mfx_SubP2_u32u32_u32 },
+        -: 1459:   { "Test of Mfx_AbsDiffP2_s16s16_s16", Test_Of_Mfx_AbsDiffP2_s16s16_s16 },
+        -: 1460:   { "Test of Mfx_AbsDiffP2_u16u16_u16", Test_Of_Mfx_AbsDiffP2_u16u16_u16 },
+        -: 1461:   { "Test of Mfx_AbsP2_s16_s16", Test_Of_Mfx_AbsP2_s16_s16 },
+        -: 1462:   { "Test of Mfx_AbsP2_s16_u16", Test_Of_Mfx_AbsP2_s16_u16 },
+        -: 1463:   { "Test of Mfx_AbsP2_s32_s32", Test_Of_Mfx_AbsP2_s32_s32 },
+        -: 1464:   { "Test of Mfx_AbsP2_s32_u32", Test_Of_Mfx_AbsP2_s32_u32 },
+        -: 1465:   { NULL, NULL }                                      
+        -: 1466:};
+        -: 1467:
