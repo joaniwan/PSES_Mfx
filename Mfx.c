@@ -61,7 +61,7 @@
   Project element: [SWS_Mfx_00002] & [SWS_Mfx_00006] & [SWS_Mfx_00007] & [SWS_Mfx_00008 Function ID[0x014] & [0x00C]]
 */
 
-sint16 Mfx_Add_s16s16_s16(sint16 x_value, sint16 y_value)
+sint16 Mfx_Add_s16s16_s16(sint16 x_value, sint16 y_value);
 {
 	sint32 tmp = (sint32)x_value + (sint32)y_value;
 	if (tmp > MAX16)

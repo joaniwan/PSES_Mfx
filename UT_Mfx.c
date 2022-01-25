@@ -5,7 +5,6 @@
 \*====================================================================================================================*/
 
 #include "acutest.h"
-
 #include "Mfx.c"   
 
 /**
@@ -630,6 +629,847 @@ void Test_Of_Mfx_Max_s32(void)
 	TEST_CHECK(result == 2);
 }
 
+/**
+  @brief 16-Bit to 8-Bit 2n Scaled Integer Conversion Test
+
+  The routine tests convertion a scaled 16-bit integer to a scaled 8-bit integer. 
+*/
+void Test_Of_MfxConvertP2_s16_s8(void)
+{
+	sint8 result;
+
+	result = MfxConvertP2_s16_s8(1, 1, -15);
+
+	TEST_CHECK(result == MIN8);
+
+	result = MfxConvertP2_s16_s8(1, 1, 10);
+
+	TEST_CHECK(result == MAX8);
+
+	result = MfxConvertP2_s16_s8(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = MfxConvertP2_s16_s8(1, 1, 0);
+
+	TEST_CHECK(result == 0);
+}
+
+void Test_Of_MfxConvertP2_u16_u8(void)
+{
+	uint8 result;
+
+	result = MfxConvertP2_u16_u8(1, 1, -15);
+
+	TEST_CHECK(result == UMIN8);
+
+	result = MfxConvertP2_u16_u8(1, 1, 10);
+
+	TEST_CHECK(result == UMAX8);
+
+	result = MfxConvertP2_u16_u8(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = MfxConvertP2_u16_u8(1, 1, 0);
+
+	TEST_CHECK(result == 0);
+}
+
+/**
+  @brief 8-Bit to 16-Bit 2n Scaled Integer Conversion Test
+
+  The routine tests convertion a scaled 8-bit integer to a scaled 16-bit integer.
+*/
+void Test_Of_MfxConvertP2_s8_s16(void)
+{
+	sint16 result;
+
+	result = MfxConvertP2_s8_s16(1, 1, -7);
+
+	TEST_CHECK(result == MIN16);
+
+	result = MfxConvertP2_s8_s16(1, 1, 16);
+
+	TEST_CHECK(result == MAX16);
+
+	result = MfxConvertP2_s8_s16(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = MfxConvertP2_s8_s16(1, 1, 0);
+
+	TEST_CHECK(result == 0);
+}
+
+void Test_Of_MfxConvertP2_u8_u16(void)
+{
+	uint16 result;
+
+	result = MfxConvertP2_u8_u16(1, 1, -7);
+
+	TEST_CHECK(result == UMIN16);
+
+	result = MfxConvertP2_u8_u16(1, 1, 16);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = MfxConvertP2_u8_u16(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = MfxConvertP2_u8_u16(1, 1, 0);
+
+	TEST_CHECK(result == 0);
+}
+
+/**
+  @brief 32-Bit to 16-Bit 2n Scaled Integer Conversion Test
+
+  The routine tests convertion a scaled 32-bit integer to a scaled 16-bit integer.
+*/
+void Test_Of_MfxConvertP2_s32_s16(void)
+{
+	sint16 result;
+
+	result = MfxConvertP2_s32_s16(1, 1, -31);
+
+	TEST_CHECK(result == MIN16);
+
+	result = MfxConvertP2_s32_s16(1, 1, 17);
+
+	TEST_CHECK(result == MAX16);
+
+	result = MfxConvertP2_s32_s16(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = MfxConvertP2_s32_s16(1, 1, 0);
+
+	TEST_CHECK(result == 0);
+}
+
+void Test_Of_MfxConvertP2_u32_u16(void)
+{
+	uint16 result;
+
+	result = MfxConvertP2_u32_u16(1, 1, -31);
+
+	TEST_CHECK(result == UMIN16);
+
+	result = MfxConvertP2_u32_u16(1, 1, 17);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = MfxConvertP2_u32_u16(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = MfxConvertP2_u32_u16(1, 1, 0);
+
+	TEST_CHECK(result == 0);
+}
+
+/**
+  @brief 16-Bit to 32-Bit 2n Scaled Integer Conversion Test
+
+  The routine tests convertion a scaled 16-bit integer to a scaled 32-bit integer.
+*/
+void Test_Of_MfxConvertP2_s16_s32(void)
+{
+	sint32 result;
+
+	result = MfxConvertP2_s16_s32(1, 1, -15);
+
+	TEST_CHECK(result == MIN32);
+
+	result = MfxConvertP2_s16_s32(1, 1, 33);
+
+	TEST_CHECK(result == MAX32);
+
+	result = MfxConvertP2_s16_s32(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = MfxConvertP2_s16_s32(1, 1, 0);
+
+	TEST_CHECK(result == 0);
+}
+
+void Test_Of_MfxConvertP2_u16_u32(void)
+{
+	uint32 result;
+
+	result = MfxConvertP2_u16_u32(1, 1, -15);
+
+	TEST_CHECK(result == UMIN32);
+
+	result = MfxConvertP2_u16_u32(1, 1, 33);
+
+	TEST_CHECK(result == UMAX32);
+
+	result = MfxConvertP2_u16_u32(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = MfxConvertP2_u16_u32(1, 1, 0);
+
+	TEST_CHECK(result == 0);
+}
+
+/**
+  @brief 16-Bit Multiplication of 2n Scaled Integer test
+
+  The routine tests multiplication two 16-bit integers with scaling factors set by input parameters.
+*/
+void Test_Of_Mfx_MulP2_s16s16_s16(void)
+{
+	sint16 result;
+
+	result = Mfx_MulP2_s16s16_s16(1, 1, 1, 1, -29);
+
+	TEST_CHECK(result == MIN16);
+
+	result = Mfx_MulP2_s16s16_s16(1, 1, 1, 1, 18);
+
+	TEST_CHECK(result == MAX16);
+
+	result = Mfx_MulP2_s16s16_s16(1, 1, 1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_MulP2_s16s16_s16(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+}
+
+void Test_Of_Mfx_MulP2_u16u16_u16(void)
+{
+	uint16 result;
+
+	result = Mfx_MulP2_u16u16_u16(1, 1, 1, 1, -29);
+
+	TEST_CHECK(result == UMIN16);
+
+	result = Mfx_MulP2_u16u16_u16(1, 1, 1, 1, 18);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = Mfx_MulP2_u16u16_u16(1, 1, 1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_MulP2_u16u16_u16(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+}
+
+/**
+  @brief 32-Bit Multiplication of 2n Scaled Integer test
+
+  The routine tests multiplication two 32-bit integers with scaling factors set by input parameters.
+*/
+void Test_Of_Mfx_MulP2_s32s32_s32(void)
+{
+	sint32 result;
+
+	result = Mfx_MulP2_s32s32_s32(1, 1, 1, 1, -62);
+
+	TEST_CHECK(result == MIN16);
+
+	result = Mfx_MulP2_s32s32_s32(1, 1, 1, 1, 34);
+
+	TEST_CHECK(result == MAX16);
+
+	result = Mfx_MulP2_s32s32_s32(1, 1, 1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_MulP2_s32s32_s32(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+}
+
+void Test_Of_Mfx_MulP2_u32u32_u32(void)
+{
+	uint32 result;
+
+	result = Mfx_MulP2_u32u32_u32(1, 1, 1, 1, -62);
+
+	TEST_CHECK(result == UMIN16);
+
+	result = Mfx_MulP2_u32u32_u32(1, 1, 1, 1, 34);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = Mfx_MulP2_u32u32_u32(1, 1, 1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_MulP2_u32u32_u32(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+}
+
+/**
+  @brief 16-Bit Division of 2n Scaled Integer test
+
+  The routine tests division of the two 16-bit integers with scaling factors set by input parameters.
+*/
+void Test_Of_Mfx_DivP2_s16s16_s16(void)
+{
+	sint16 result;
+
+	result = Mfx_DivP2_s16s16_s16(1, 1, 1, 1, -16);
+
+	TEST_CHECK(result == MIN16);
+
+	result = Mfx_DivP2_s16s16_s16(1, 1, 1, 1, 33);
+
+	TEST_CHECK(result == MAX16);
+
+	result = Mfx_DivP2_s16s16_s16(1, 1, 1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_DivP2_s16s16_s16(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+}
+
+void Test_Of_Mfx_DivP2_u16u16_u16(void)
+{
+	uint16 result;
+
+	result = Mfx_DivP2_u16u16_u16(1, 1, 1, 1, -16);
+
+	TEST_CHECK(result == UMIN16);
+
+	result = Mfx_DivP2_u16u16_u16(1, 1, 1, 1, 18);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = Mfx_DivP2_u16u16_u16(1, 1, 1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_DivP2_u16u16_u16(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+}
+
+/**
+  @brief 32-Bit Division of 2n Scaled Integer test
+
+  The routine tests division of the two 32-bit integers with scaling factors set by input parameters.
+*/
+void Test_Of_Mfx_DivP2_s32s32_s32(void)
+{
+	sint32 result;
+
+	result = Mfx_DivP2_s32s32_s32(1, 1, 1, 1, 32);
+
+	TEST_CHECK(result == MIN32);
+
+	result = Mfx_DivP2_s32s32_s32(1, 1, 1, 1, 64);
+
+	TEST_CHECK(result == MAX32);
+
+	result = Mfx_DivP2_s32s32_s32(1, 1, 1, 0, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_DivP2_s32s32_s32(1, 1, 2, 0, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_DivP2_s32s32_s32(1, 0, 2, 0, 1);
+
+	TEST_CHECK(result == MAX32);
+
+	result = Mfx_DivP2_s32s32_s32(-1, 0, 2, 0, 1);
+
+	TEST_CHECK(result == MIN32);
+}
+
+void Test_Of_Mfx_DivP2_u32u32_u32(void)
+{
+	uint32 result;
+
+	result = Mfx_DivP2_u32u32_u32(1, 1, 1, 1, 32);
+
+	TEST_CHECK(result == UMIN32);
+
+	result = Mfx_DivP2_u32u32_u32(1, 1, 1, 1, 64);
+
+	TEST_CHECK(result == UMAX32);
+
+	result = Mfx_DivP2_u32u32_u32(1, 1, 1, 0, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_DivP2_u32u32_u32(1, 1, 2, 0, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_DivP2_u32u32_u32(1, 0, 2, 0, 1);
+
+	TEST_CHECK(result == UMAX32);
+
+	result = Mfx_DivP2_u32u32_u32(-1, 0, 2, 0, 1);
+
+	TEST_CHECK(result == UMIN32);
+}
+
+/**
+  @brief 16-Bit Addition of 2n Scaled Integer test
+
+  The routine tests addition of the two 16-bit integers with scaling factors set by input parameters.
+*/
+void Test_Of_Mfx_AddP2_s16s16_s16(void)
+{
+	sint16 result;
+
+	result = Mfx_AddP2_s16s16_s16(1, 1, 1, 1, 17);
+
+	TEST_CHECK(result == MAX16);
+
+	result = Mfx_AddP2_s16s16_s16(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AddP2_s16s16_s16(1, 1, 2, 1, 2);
+
+	TEST_CHECK(result == 3);
+
+	result = Mfx_AddP2_s16s16_s16(1, 1, 1, 17, 1);
+
+	TEST_CHECK(result == MAX16);
+
+	result = Mfx_AddP2_s16s16_s16(1, 1, 1, 2, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AddP2_s16s16_s16(1, 1, 1, 2, 2);
+
+	TEST_CHECK(result == 3);
+
+	result = Mfx_AddP2_s16s16_s16(1, MIN16, 2, 1, 1);
+
+	TEST_CHECK(result == MIN16);
+}
+
+void Test_Of_Mfx_AddP2_u16u16_u16(void)
+{
+	uint16 result;
+
+	result = Mfx_AddP2_u16u16_u16(1, 1, 1, 1, 17);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = Mfx_AddP2_u16u16_u16(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AddP2_u16u16_u16(1, 1, 2, 1, 2);
+
+	TEST_CHECK(result == 3);
+
+	result = Mfx_AddP2_u16u16_u16(1, 1, 1, 17, 1);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = Mfx_AddP2_u16u16_u16(1, 1, 1, 2, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AddP2_u16u16_u16(1, 1, 1, 2, 2);
+
+	TEST_CHECK(result == 3);
+
+	result = Mfx_AddP2_u16u16_u16(1, UMIN16, 2, 1, 1);
+
+	TEST_CHECK(result == UMIN16);
+}
+
+/**
+  @brief 32-Bit Addition of 2n Scaled Integer test
+
+  The routine tests addition of the two 32-bit integers with scaling factors set by input parameters.
+*/
+void Test_Of_Mfx_AddP2_s32s32_s32(void)
+{
+	sint32 result;
+
+	result = Mfx_AddP2_s32s32_s32(1, 1, 1, 1, 17);
+
+	TEST_CHECK(result == MAX32);
+
+	result = Mfx_AddP2_s32s32_s32(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AddP2_s32s32_s32(1, 1, 2, 1, 2);
+
+	TEST_CHECK(result == 3);
+
+	result = Mfx_AddP2_s32s32_s32(1, 1, 1, 17, 1);
+
+	TEST_CHECK(result == MAX32);
+
+	result = Mfx_AddP2_s32s32_s32(1, 1, 1, 2, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AddP2_s32s32_s32(1, 1, 1, 2, 2);
+
+	TEST_CHECK(result == 3);
+
+	result = Mfx_AddP2_s32s32_s32(1, MIN32, 2, 1, 1);
+
+	TEST_CHECK(result == MIN32);
+}
+
+void Test_Of_Mfx_AddP2_u32u32_u32(void)
+{
+	Uint32 result;
+
+	result = Mfx_AddP2_u32u32_u32(1, 1, 1, 1, 17);
+
+	TEST_CHECK(result == UMAX32);
+
+	result = Mfx_AddP2_u32u32_u32(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AddP2_u32u32_u32(1, 1, 2, 1, 2);
+
+	TEST_CHECK(result == 3);
+
+	result = Mfx_AddP2_u32u32_u32(1, 1, 1, 17, 1);
+
+	TEST_CHECK(result == UMAX32);
+
+	result = Mfx_AddP2_u32u32_u32(1, 1, 1, 2, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AddP2_u32u32_u32(1, 1, 1, 2, 2);
+
+	TEST_CHECK(result == 3);
+
+	result = Mfx_AddP2_u32u32_u32(1, UMIN32, 2, 1, 1);
+
+	TEST_CHECK(result == UMIN32);
+}
+
+/**
+  @brief 16-Bit Subtraction of 2n Scaled Integer test
+
+  The routine tests subtraction of the two 16-bit integers with scaling factors set by input parameters.
+*/
+void Test_Of_Mfx_SubP2_s16s16_s16(void)
+{
+	sint16 result;
+
+	result = Mfx_SubP2_s16s16_s16(1, 1, 1, 1, 17);
+
+	TEST_CHECK(result == MAX16);
+
+	result = Mfx_SubP2_s16s16_s16(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 0);
+
+	result = Mfx_SubP2_s16s16_s16(1, 1, 2, 1, 2);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_SubP2_s16s16_s16(1, 1, 1, 17, 1);
+
+	TEST_CHECK(result == MAX16);
+
+	result = Mfx_SubP2_s16s16_s16(1, 1, 1, 2, 1);
+
+	TEST_CHECK(result == 0);
+
+	result = Mfx_SubP2_s16s16_s16(1, 1, 1, 2, 2);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_SubP2_s16s16_s16(1, MIN16, 2, 1, 1);
+
+	TEST_CHECK(result == MIN16);
+}
+
+void Test_Of_Mfx_SubP2_u16u16_u16(void)
+{
+	uint16 result;
+
+	result = Mfx_SubP2_u16u16_u16(1, 1, 1, 1, 17);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = Mfx_SubP2_u16u16_u16(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 0);
+
+	result = Mfx_SubP2_u16u16_u16(1, 1, 2, 1, 2);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_SubP2_u16u16_u16(1, 1, 1, 17, 1);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = Mfx_SubP2_u16u16_u16(1, 1, 1, 2, 1);
+
+	TEST_CHECK(result == 0);
+
+	result = Mfx_SubP2_u16u16_u16(1, 1, 1, 2, 2);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_SubP2_u16u16_u16(1, UMIN16, 2, 1, 1);
+
+	TEST_CHECK(result == UMIN16);
+}
+
+/**
+  @brief 32-Bit Subtraction of 2n Scaled Integer test
+
+  The routine tests subtraction of the two 32-bit integers with scaling factors set by input parameters.
+*/
+void Test_Of_Mfx_SubP2_s32s32_s32(void)
+{
+	sint16 result;
+
+	result = Mfx_SubP2_s32s32_s32(1, 1, 1, 1, 33);
+
+	TEST_CHECK(result == MAX32);
+
+	result = Mfx_SubP2_s32s32_s32(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 0);
+
+	result = Mfx_SubP2_s32s32_s32(1, 1, 2, 1, 2);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_SubP2_s32s32_s32(1, 1, 1, 33, 1);
+
+	TEST_CHECK(result == MAX32);
+
+	result = Mfx_SubP2_s32s32_s32(1, 1, 1, 2, 1);
+
+	TEST_CHECK(result == 0);
+
+	result = Mfx_SubP2_s32s32_s32(1, 1, 1, 2, 2);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_SubP2_s32s32_s32(1, MIN32, 2, 1, 1);
+
+	TEST_CHECK(result == MIN32);
+}
+
+void Test_Of_Mfx_SubP2_u32u32_u32(void)
+{
+	uint16 result;
+
+	result = Mfx_SubP2_u32u32_u32(1, 1, 1, 1, 33);
+
+	TEST_CHECK(result == UMAX32);
+
+	result = Mfx_SubP2_u32u32_u32(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 0);
+
+	result = Mfx_SubP2_u32u32_u32(1, 1, 2, 1, 2);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_SubP2_u32u32_u32(1, 1, 1, 33, 1);
+
+	TEST_CHECK(result == UMAX32);
+
+	result = Mfx_SubP2_u32u32_u32(1, 1, 1, 2, 1);
+
+	TEST_CHECK(result == 0);
+
+	result = Mfx_SubP2_u32u32_u32(1, 1, 1, 2, 2);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_SubP2_u32u32_u32(1, UMIN32, 2, 1, 1);
+
+	TEST_CHECK(result == UMIN32);
+}
+
+/**
+  @brief Absolute Difference of 2n Scaled Integer test
+
+  The routine tests absolute value of two 16-bit integers with scaling factors set by input parameters.
+*/
+void Test_Of_Mfx_AbsDiffP2_s16s16_s16(void)
+{
+	sint16 result;
+
+	result = Mfx_AbsDiffP2_s16s16_s16(1, 1, 2, 1, 17);
+
+	TEST_CHECK(result == MAX16);
+
+	result = Mfx_AbsDiffP2_s16s16_s16(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AbsDiffP2_s16s16_s16(1, 1, 2, 1, 2);
+
+	TEST_CHECK(result == 2);
+
+	result = Mfx_AbsDiffP2_s16s16_s16(1, 1, 1, 17, 1);
+
+	TEST_CHECK(result == MAX16);
+
+	result = Mfx_AbsDiffP2_s16s16_s16(1, 1, 1, 2, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AbsDiffP2_s16s16_s16(1, 1, 1, 2, 2);
+
+	TEST_CHECK(result == 2);
+
+	result = Mfx_AbsDiffP2_s16s16_s16(1, MIN16, 2, 1, 1);
+
+	TEST_CHECK(result == MIN16);
+}
+
+void Test_Of_Mfx_AbsDiffP2_u16u16_u16(void)
+{
+	uint16 result;
+
+	result = Mfx_AbsDiffP2_u16u16_u16(1, 1, 2, 1, 17);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = Mfx_AbsDiffP2_u16u16_u16(1, 1, 2, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AbsDiffP2_u16u16_u16(1, 1, 2, 1, 2);
+
+	TEST_CHECK(result == 2);
+
+	result = Mfx_AbsDiffP2_u16u16_u16(1, 1, 1, 17, 1);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = Mfx_AbsDiffP2_u16u16_u16(1, 1, 1, 2, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AbsDiffP2_u16u16_u16(1, 1, 1, 2, 2);
+
+	TEST_CHECK(result == 2);
+
+	result = Mfx_AbsDiffP2_u16u16_u16(1, UMIN16, 2, 1, 1);
+
+	TEST_CHECK(result == UMIN16);
+}
+
+
+/**
+  @brief Absolute Value: 16-Bit Absolute Value of 2n Scaled Integer test
+
+  The routine tests the absolute value of a 16-bit integer with scaling factors set by input parameters.
+*/
+void Test_Of_Mfx_AbsP2_s16_s16(void)
+{
+	sint16 result;
+
+	result = Mfx_AbsP2_s16_s16(1, 1, -16);
+
+	TEST_CHECK(result == MIN16);
+
+	result = Mfx_AbsP2_s16_s16(1, 1, 17);
+
+	TEST_CHECK(result == MAX16);
+
+	result = Mfx_AbsP2_s16_s16(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AbsP2_s16_s16(1, 2, 1);
+
+	TEST_CHECK(result == 0);
+}
+
+void Test_Of_Mfx_AbsP2_s16_u16(void)
+{
+	uint16 result;
+
+	result = Mfx_AbsP2_s16_u16(1, 1, -16);
+
+	TEST_CHECK(result == UMIN16);
+
+	result = Mfx_AbsP2_s16_u16(1, 1, 17);
+
+	TEST_CHECK(result == UMAX16);
+
+	result = Mfx_AbsP2_s16_u16(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AbsP2_s16_u16(1, 2, 1);
+
+	TEST_CHECK(result == 0);
+}
+
+/**
+  @brief Absolute Value: 32-Bit Absolute Value of 2n Scaled Integer test
+
+  The routine tests the absolute value of a 32-bit integer with scaling factors set by input parameters.
+*/
+void Test_Of_Mfx_AbsP2_s32_s32(void)
+{
+	sint32 result;
+
+	result = Mfx_AbsP2_s32_s32(1, 1, -31);
+
+	TEST_CHECK(result == MIN32);
+
+	result = Mfx_AbsP2_s32_s32(1, 1, 33);
+
+	TEST_CHECK(result == MAX32);
+
+	result = Mfx_AbsP2_s32_s32(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AbsP2_s32_s32(1, 2, 1);
+
+	TEST_CHECK(result == 0);
+}
+
+void Test_Of_Mfx_AbsP2_s32_u32(void)
+{
+	uint32 result;
+
+	result = Mfx_AbsP2_s32_u32(1, 1, -31);
+
+	TEST_CHECK(result == UMIN32);
+
+	result = Mfx_AbsP2_s16_u16(1, 1, 33);
+
+	TEST_CHECK(result == UMAX32);
+
+	result = Mfx_AbsP2_s16_u16(1, 1, 1);
+
+	TEST_CHECK(result == 1);
+
+	result = Mfx_AbsP2_s16_u16(1, 2, 1);
+
+	TEST_CHECK(result == 0);
+}
 /*
   Test list.
 */
