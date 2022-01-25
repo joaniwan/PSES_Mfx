@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.6"/>
+    <errors>
+        <error id="selfAssignment" severity="warning" msg="Redundant assignment of &amp;#039;tmp&amp;#039; to itself." verbose="Redundant assignment of &amp;#039;tmp&amp;#039; to itself." cwe="398" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="206"/>
+        </error>
+        <error id="selfAssignment" severity="warning" msg="Redundant assignment of &amp;#039;tmp&amp;#039; to itself." verbose="Redundant assignment of &amp;#039;tmp&amp;#039; to itself." cwe="398" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="236"/>
+        </error>
+        <error id="selfAssignment" severity="warning" msg="Redundant assignment of &amp;#039;tmp&amp;#039; to itself." verbose="Redundant assignment of &amp;#039;tmp&amp;#039; to itself." cwe="398" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="252"/>
+        </error>
+        <error id="selfAssignment" severity="warning" msg="Redundant assignment of &amp;#039;tmp&amp;#039; to itself." verbose="Redundant assignment of &amp;#039;tmp&amp;#039; to itself." cwe="398" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="392"/>
+        </error>
+        <error id="selfAssignment" severity="warning" msg="Redundant assignment of &amp;#039;tmp&amp;#039; to itself." verbose="Redundant assignment of &amp;#039;tmp&amp;#039; to itself." cwe="398" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="437"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;tmp&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;tmp&amp;#039; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="902"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;tmp&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;tmp&amp;#039; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="979"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;tmp&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;tmp&amp;#039; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1056"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;tmp&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;tmp&amp;#039; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1137"/>
+        </error>
+        <error id="unsignedPositive" severity="style" msg="Unsigned expression &amp;#039;x&amp;#039; can&amp;#039;t be negative so it is unnecessary to test it." verbose="Unsigned expression &amp;#039;x&amp;#039; can&amp;#039;t be negative so it is unnecessary to test it." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1363"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;x&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;x&amp;#039; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1367"/>
+        </error>
+        <error id="unsignedPositive" severity="style" msg="Unsigned expression &amp;#039;x&amp;#039; can&amp;#039;t be negative so it is unnecessary to test it." verbose="Unsigned expression &amp;#039;x&amp;#039; can&amp;#039;t be negative so it is unnecessary to test it." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1464"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;tmp&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;tmp&amp;#039; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1601"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;tmp&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;tmp&amp;#039; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1718"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;tmp&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;tmp&amp;#039; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1834"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;tmp&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;tmp&amp;#039; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1950"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;tmp&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;tmp&amp;#039; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="2138"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &amp;#039;tmp&amp;#039; is less than zero." verbose="The unsigned expression &amp;#039;tmp&amp;#039; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="2218"/>
+        </error>
+        <error id="shiftTooManyBitsSigned" severity="portability" msg="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1622." verbose="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1622." cwe="758" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1628" info="Shift"/>
+            <location file="Mfx.c" line="1622" info="Assuming that condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="shiftTooManyBitsSigned" severity="portability" msg="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1641." verbose="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1641." cwe="758" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1647" info="Shift"/>
+            <location file="Mfx.c" line="1641" info="Assuming that condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="shiftTooManyBitsSigned" severity="portability" msg="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1676." verbose="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1676." cwe="758" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1682" info="Shift"/>
+            <location file="Mfx.c" line="1676" info="Assuming that condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="shiftTooManyBitsSigned" severity="portability" msg="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1695." verbose="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1695." cwe="758" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1701" info="Shift"/>
+            <location file="Mfx.c" line="1695" info="Assuming that condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="shiftTooManyBitsSigned" severity="portability" msg="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1854." verbose="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1854." cwe="758" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1860" info="Shift"/>
+            <location file="Mfx.c" line="1854" info="Assuming that condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="shiftTooManyBitsSigned" severity="portability" msg="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1873." verbose="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1873." cwe="758" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1879" info="Shift"/>
+            <location file="Mfx.c" line="1873" info="Assuming that condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="shiftTooManyBitsSigned" severity="portability" msg="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1908." verbose="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1908." cwe="758" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1914" info="Shift"/>
+            <location file="Mfx.c" line="1908" info="Assuming that condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="shiftTooManyBitsSigned" severity="portability" msg="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1927." verbose="Shifting signed 32-bit value by 31 bits is implementation-defined behaviour. See condition at line 1927." cwe="758" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1933" info="Shift"/>
+            <location file="Mfx.c" line="1927" info="Assuming that condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="integerOverflowCond" severity="warning" msg="Either the condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(a-b)&amp;#039;." verbose="Either the condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(a-b)&amp;#039;." cwe="190" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1628" info="Integer overflow"/>
+            <location file="Mfx.c" line="1622" info="Assuming that condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="integerOverflowCond" severity="warning" msg="Either the condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(b-a)&amp;#039;." verbose="Either the condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(b-a)&amp;#039;." cwe="190" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1647" info="Integer overflow"/>
+            <location file="Mfx.c" line="1641" info="Assuming that condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="integerOverflowCond" severity="warning" msg="Either the condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(a-b)&amp;#039;." verbose="Either the condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(a-b)&amp;#039;." cwe="190" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1682" info="Integer overflow"/>
+            <location file="Mfx.c" line="1676" info="Assuming that condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="integerOverflowCond" severity="warning" msg="Either the condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(b-a)&amp;#039;." verbose="Either the condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(b-a)&amp;#039;." cwe="190" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1701" info="Integer overflow"/>
+            <location file="Mfx.c" line="1695" info="Assuming that condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="integerOverflowCond" severity="warning" msg="Either the condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(a-b)&amp;#039;." verbose="Either the condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(a-b)&amp;#039;." cwe="190" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1860" info="Integer overflow"/>
+            <location file="Mfx.c" line="1854" info="Assuming that condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="integerOverflowCond" severity="warning" msg="Either the condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(b-a)&amp;#039;." verbose="Either the condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(b-a)&amp;#039;." cwe="190" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1879" info="Integer overflow"/>
+            <location file="Mfx.c" line="1873" info="Assuming that condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="integerOverflowCond" severity="warning" msg="Either the condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(a-b)&amp;#039;." verbose="Either the condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(a-b)&amp;#039;." cwe="190" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1914" info="Integer overflow"/>
+            <location file="Mfx.c" line="1908" info="Assuming that condition &amp;#039;(a-b)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="integerOverflowCond" severity="warning" msg="Either the condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(b-a)&amp;#039;." verbose="Either the condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is redundant or there is signed integer overflow for expression &amp;#039;1&amp;lt;&amp;lt;(b-a)&amp;#039;." cwe="190" file0="Mfx.c" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="1933" info="Integer overflow"/>
+            <location file="Mfx.c" line="1927" info="Assuming that condition &amp;#039;(b-a)&amp;gt;31&amp;#039; is not redundant"/>
+        </error>
+        <error id="internalError" severity="information" msg="Bailing out from checking Mfx.c since there was an internal error: Failed to execute addon (command: &amp;#039;python3.exe  &amp;quot;C:\Program Files\Cppcheck\addons\cert.py&amp;quot; --cli C:\MinGW\bin\Kod2\check-cppcheck-build-dir\Mfx.a1.dump&amp;#039;)" verbose="Bailing out from checking Mfx.c since there was an internal error: Failed to execute addon (command: &amp;#039;python3.exe  &amp;quot;C:\Program Files\Cppcheck\addons\cert.py&amp;quot; --cli C:\MinGW\bin\Kod2\check-cppcheck-build-dir\Mfx.a1.dump&amp;#039;)" sinceDate="25.01.2022">
+            <location file="Mfx.c" line="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &amp;#039;CLOCK_MONOTONIC;CLOCK_PROCESS_CPUTIME_ID;__APPLE__;__unix;__unix__;unix&amp;#039; since the value of &amp;#039;CLOCK_MONOTONIC&amp;#039; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &amp;#039;CLOCK_MONOTONIC;CLOCK_PROCESS_CPUTIME_ID;__APPLE__;__unix;__unix__;unix&amp;#039; since the value of &amp;#039;CLOCK_MONOTONIC&amp;#039; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." sinceDate="25.01.2022">
+            <location file="acutest.h" line="455"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &amp;#039;CLOCK_MONOTONIC;CLOCK_PROCESS_CPUTIME_ID;__APPLE__;__unix;__unix__;unix&amp;#039; since the value of &amp;#039;CLOCK_PROCESS_CPUTIME_ID&amp;#039; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &amp;#039;CLOCK_MONOTONIC;CLOCK_PROCESS_CPUTIME_ID;__APPLE__;__unix;__unix__;unix&amp;#039; since the value of &amp;#039;CLOCK_PROCESS_CPUTIME_ID&amp;#039; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." sinceDate="25.01.2022">
+            <location file="acutest.h" line="457"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &amp;#039;RUNNING_ON_VALGRIND&amp;#039; since the value of &amp;#039;RUNNING_ON_VALGRIND&amp;#039; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &amp;#039;RUNNING_ON_VALGRIND&amp;#039; since the value of &amp;#039;RUNNING_ON_VALGRIND&amp;#039; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." sinceDate="25.01.2022">
+            <location file="acutest.h" line="1698"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &amp;#039;TEST_FINI&amp;#039; since the value of &amp;#039;TEST_FINI&amp;#039; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &amp;#039;TEST_FINI&amp;#039; since the value of &amp;#039;TEST_FINI&amp;#039; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." sinceDate="25.01.2022">
+            <location file="acutest.h" line="854"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &amp;#039;TEST_INIT&amp;#039; since the value of &amp;#039;TEST_INIT&amp;#039; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &amp;#039;TEST_INIT&amp;#039; since the value of &amp;#039;TEST_INIT&amp;#039; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." sinceDate="25.01.2022">
+            <location file="acutest.h" line="841"/>
+        </error>
+        <error id="internalError" severity="information" msg="Bailing out from checking UT_Mfx.c since there was an internal error: Failed to execute addon (command: &amp;#039;python3.exe  &amp;quot;C:\Program Files\Cppcheck\addons\cert.py&amp;quot; --cli C:\MinGW\bin\Kod2\check-cppcheck-build-dir\UT_Mfx.a1.dump&amp;#039;)" verbose="Bailing out from checking UT_Mfx.c since there was an internal error: Failed to execute addon (command: &amp;#039;python3.exe  &amp;quot;C:\Program Files\Cppcheck\addons\cert.py&amp;quot; --cli C:\MinGW\bin\Kod2\check-cppcheck-build-dir\UT_Mfx.a1.dump&amp;#039;)" sinceDate="25.01.2022">
+            <location file="UT_Mfx.c" line="0"/>
+        </error>
+    </errors>
+</results>
